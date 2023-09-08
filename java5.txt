@@ -1,0 +1,130 @@
+History of Java
+================
+In 1990, Sun Micro System took one project to develop a software called consumer electronic device which can be controlled by a remote like setup box.That time project was called Stealth project but later it is renamed to Green project.
+
+James Gosling, Mike Sheradin and Patrick Naughton were there to develop the project.
+They met in a place call Aspan/Colarado to start the work with Graphic System.James Gosling decided to use C and C++ languages to develop this project.But they problem what they have faced is , C and C++ language are system dependent.Then James Gosling decided why don't we create our own programming language? which is system independent.
+
+In 1991, they have developed one programming language called an OAK.OAK means strength , it self is a coffee seed name and it is a national tree for many contries like Germany , France, USA and etc.
+
+Late in 1995, they have renamed OAK to Java. Java is a island of an Indonasia where 
+first coffee of seed was produced.During the development of project they were consuming lot of coffee's thats why symbol of java is a cup of coffee with saucer.
+
+
+Interview Questions
+====================
+
+Q)What are the important features of Java?
+
+We have following important features of java.
+
+1) Simple
+2) Object oriented
+3) Platform independent
+4) Highly secured 
+5) Portable 
+6) Architecture neutral 
+7) Multi-threaded
+8) Robust 
+9) Dynamic 
+10) Distributed 
+
+
+Q)Who is the responsible to destroy the objects in java?
+
+Garbage Collector 	
+
+
+Q)What is garbage collector?
+
+Garbage collector is used to destroy unused or useless objects from java.
+
+
+
+Q)How many classes are there in java?
+
+	Java 7	----	4024 classes
+	
+	Java 8  ----	4240 classes 
+		
+	Java 9	----	6005 classes
+
+	Java 10 ----	6002 classes 
+
+
+Q)In how many ways we can call Garbage collector?
+
+There are two ways to call garbage collector in java.
+
+1) System.gc() 
+
+2) Runnable.getRuntime().gc()
+
+
+Diagram: java5.1
+
+
+Q)Java originally known as ___ ?
+
+	OAK 
+
+Q)In which year java was developed?
+
+	In 1995.
+
+Assignment
+==============
+1) What is Java?
+
+2) Feature of Java?
+
+3) JDK vs JRE vs JVM ?
+
+4) What is Garbage collector and how many ways we can call garbage collector?
+
+5) How many classes are there in java?
+
+6) What is OS,software,application,program,instruction and token? 
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

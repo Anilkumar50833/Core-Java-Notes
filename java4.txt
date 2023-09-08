@@ -1,0 +1,222 @@
+Naming Conventions in java
+===========================
+In java uppercase letters will consider as different and lowercase letters will consider as different that's why we consider java is a case sensitive programming language.
+
+As java is a case sensitive ,we must and should follow naming conventions for following things.
+
+ex:
+	classes
+	interfaces
+	variables
+	methods
+	keywords
+	packages and 
+	constants 
+
+classes
+--------
+In java, A class name must and should starts with upper case letter and if it contains multiple words then each inner word must starts with initcap.
+ex:
+	Predefined classes		Userdefined classes
+	-----------------		--------------------
+	System 				Test
+	String				ExampleApp 
+	FileWriter 			MyExample 
+	BufferedReader 			IhubTalentManagement
+	and etc.			and etc.
+
+interfaces
+------------
+In java, An interface name must and should starts with upper case letter and if it contains multiple words then each inner word must starts with initcap.
+ex:
+	predefined interfaces		Userdefined interfaces
+	----------------------		-----------------------
+	Runnable 			ITest
+	Serializable 			IExample 
+	ListIterator 			IDemoApp
+	Enumeration			ITalentManagement
+	and etc.			and etc.
+
+variables
+-----------
+In java, A variable name must and should starts with lower case letter and if it contains multiple words then each inner word must starts with initcap.
+ex:
+	predefined variables		Userdefined variables
+	---------------------		--------------------
+	length				i
+	out				empId
+	err				studName
+	in				deptNo 
+	and etc.			and etc.
+
+methods
+------
+In java, a method name starts with lower case letter and if it contains multiple words then each inner word must starts with initcap.
+ex:
+	predefined methods		Userdefined methods
+	------------------		-------------------
+	getPriority()			getDetails()
+	setName()			calculateBillAmt()
+	hashCode()			getStudentInfo()
+	getClass()			and etc.
+	and etc.
+
+keywords
+----------
+In java, all keywords we need to declare under lower case letters only.
+ex:
+	predefined keywords		
+	--------------------		
+	if				
+	else
+	public
+	static
+	void
+	and etc.
+
+packages
+----------
+In java, all packages we need to declare under lower case letters only.
+ex:
+	predefined packages		userdefined packages
+	------------------		---------------------
+	java.lang			ihubtalent		
+	java.io				com.ihubtalent.www
+	java.util			akhila
+	java.util.stream		com.akhila.www
+	java.text			and etc.
+	java.sql
+	and etc.
+
+constants
+----------
+In java, all constants we need to declare under uppercase letters only.
+ex:
+	predefined constants 		Userdefined constants
+	------------------		---------------------
+	MAX_PRIORITY			N=10;
+	MIN_PRIORITY
+	NORM_PRIORITY
+	MAX_VALUE
+	MIN_VALUE
+	and etc.
+
+
+Interview Questions
+=======================
+
+Q)What is Java?
+
+Java is a object oriented, platform independent , case sensitive, strongly typed 
+checking, high level, open source programming language developed by James Gosling
+in the year of 1995.
+
+
+
+Q)Which is a default package in java?
+
+	java.lang package
+
+Q)What is the difference between JDK, JRE and JVM ? 
+
+JDK
+----
+JDK stands for Java Development Kit.
+
+It is a installable software which consist JRE (Java Runtime Environment), JVM (Java Virtual Machine), Compiler (javac), Interpreter (java),an Archiever (.jar), document generator (javadoc) and other tools needed for java application development. 
+
+JRE
+----
+JRE stands for Java Runtime Environment.
+
+JRE provides very good environment to run java applications only.
+
+
+JVM
+-----
+JVM stands for Java Virtual Machine.
+
+JVM is an interpreter which is used to execute our program line by line procedure.
+
+Diagram: java4.1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

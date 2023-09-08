@@ -1,0 +1,852 @@
+Java Source File Structure
+============================
+case1:
+-------
+	A java program can have multiple classes.If a java program contains 
+	multiple class then we need to check which class contains main method.
+	That class will consider as main class.
+	ex:
+		B.java
+		---------
+		class A
+		{
+		}
+		class B 
+		{
+			public static void main(String[] args)
+			{
+				-
+				- //code to be execute 
+				-
+			}
+		}
+
+case2:
+------
+	If java program contains multiple classes with main method then 
+	we can save our program name with any name.
+	ex:
+	Ihub.java
+	--------
+	class A 
+	{
+		public static void main(String[] args) 
+		{
+			System.out.println("A class");
+		}
+	}
+	class B  
+	{
+		public static void main(String[] args) 
+		{
+			System.out.println("B class");
+		}
+	}
+	class C  
+	{
+		public static void main(String[] args) 
+		{
+			System.out.println("C class");
+		}
+	}
+
+	If we compile above program we will get three .class files i.e 
+	A.class, B.class and C.class.
+
+	javac    Ihub.java
+
+	java  A (A class will execute)  
+	java  B (B class will execute) 
+	java  C (C class will execute) 	
+
+
+case3:
+------
+	If a java program contains multiple classes main method then 
+	atleast one class we need to declare as public and that public class
+	will treated as main class. We need to save our program name with 
+	public class name only.
+	ex:
+	A.java
+	--------
+	public class A 
+	{
+		public static void main(String[] args) 
+		{
+			System.out.println("A class");
+		}
+	}
+	class B  
+	{
+		public static void main(String[] args) 
+		{
+			System.out.println("B class");
+		}
+	}
+	class C  
+	{
+		public static void main(String[] args) 
+		{
+			System.out.println("C class");
+		}
+	}
+
+	If we compile above program we will get three .class files i.e 
+	A.class, B.class and C.class.
+
+	javac    A.java
+
+	java  A (A class will execute)  
+	java  B (B class will execute) 
+	java  C (C class will execute) 
+
+case4:
+-----
+	We can't declare two classes as public with main method because we can save
+ 	our program name with one public class name only.
+	
+
+
+Q)What is the difference between default class and public class?
+
+default class
+-------------
+We can access default class within the package.
+ex:
+	class A
+	{
+		-
+		- // code to be execute 
+		-
+	}
+
+
+public class
+-----------
+We can access public class within the package and outside of the package.
+ex:
+	public class A
+	{
+		-
+		- // code to be execute 
+		-
+	}
+
+
+
+Control Statements
+====================
+Control statement enables the programmer to control flow of the program.
+
+Control statement allows the programmer to make decision , to jump from one section of code to another section and to execute the code repeatedly.
+
+We have four types of control statements in java.
+
+1) Decision making statement 
+
+2) Selection statement 
+
+3) Iteration statement 
+
+4) Jump statement 
+
+1) Decision making statement 
+------------------------------
+It is used to create conditions in our program.
+
+Decision making statement is possible by using following ways.
+
+i) if stmt 
+
+ii) if else stmt 
+
+iii) if else if ladder 
+
+iv) nested if stmt 
+
+i) if stmt 
+------------
+It is used to execute the source code only if our condition is true.
+
+syntax:
+------
+	if(condition/expression)
+	{
+		-
+		- //code to be execute if cond is true 
+		-
+	}
+
+ex:1
+------
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("stmt1");
+		if(5>2)
+		{
+			System.out.println("stmt2");
+		}
+		System.out.println("stmt3");
+	}
+}
+o/p:
+stmt1
+stmt2
+stmt3
+
+ex:2
+----
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("stmt1");
+		if(5>20)
+		{
+			System.out.println("stmt2");
+		}
+		System.out.println("stmt3");
+	}
+}
+o/p:
+
+stmt1
+stmt3
+
+ex:3
+-----
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		if(!(5>2))
+			System.out.println("stmt1");
+			System.out.println("stmt2");
+			System.out.println("stmt3");
+	}
+}
+
+o/p:
+stmt2
+stmt3
+
+Q)Write a java program to find out greatest of two numbers? 
+
+import java.util.Scanner;
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the First Number :");
+		int a=sc.nextInt();
+		System.out.println("Enter the Second Number :");
+		int b=sc.nextInt();
+
+		if(a>b)
+			System.out.println(a+" is greatest");
+		if(b>a)
+			System.out.println(b+" is greatest");
+	}
+}
+
+Q)Write a java program to find out greatest of three numbers?
+
+import java.util.Scanner;
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the First Number :");
+		int a=sc.nextInt();
+		System.out.println("Enter the Second Number :");
+		int b=sc.nextInt();
+		System.out.println("Enter the Third Number :");
+		int c=sc.nextInt();
+
+		if((a>b) && (a>c))
+			System.out.println(a+" is greatest");
+		if((b>a) && (b>c))
+			System.out.println(b+" is greatest");
+		if((c>a) && (c>b))
+			System.out.println(c+" is greatest");
+	}
+}
+
+
+ii) if else stmt 
+-------------------
+It will execute the source code either our condition is true or false.
+
+syntax:
+	if(condition/expression)
+	{
+		- // code to be execute if cond is true 
+	}
+	else
+	{
+		- // code to be execute if cond is false  	 
+	}
+
+ex:1
+-----
+
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("stmt1");	
+		if(true)
+		{
+			System.out.println("stmt2");
+		}
+		else
+		{
+			System.out.println("stmt3");
+		}
+		System.out.println("stmt4");
+	}
+}
+o/p:
+stmt1
+stmt2
+stmt4
+
+ex:2
+-----
+
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("stmt1");	
+		if(false)
+		{
+			System.out.println("stmt2");
+		}
+		else
+		{
+			System.out.println("stmt3");
+		}
+		System.out.println("stmt4");
+	}
+}
+
+o/p:
+
+stmt1
+stmt3
+stmt4
+
+Q)Write a java program to check given age is eligible to vote or not?
+
+ex:
+import java.util.Scanner;
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+
+		System.out.println("Enter the Age : ");
+		int age=sc.nextInt();
+
+		if(age>=18)
+			System.out.println("U r eligible to vote");
+		else
+			System.out.println("U r not eligible to vote");
+	}
+}
+
+
+Q)Write a java program to find out given number is +ve or -ve?
+
+import java.util.Scanner;
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+
+		System.out.println("Enter the Number : ");
+		int n=sc.nextInt();
+
+		if(n==0)
+		{
+			System.out.println("It is not a positive or negative number");
+			System.exit(0);
+		}
+
+		if(n>0)
+			System.out.println("It is positive number");
+		else
+			System.out.println("It is negative number");
+	}
+}
+
+Q)Write a java program to find out given number is even or odd?
+
+even numbers : 2 4 6 8 10
+
+odd numbers : 1 3 5 7 9 
+
+ex:
+import java.util.Scanner;
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+
+		System.out.println("Enter the Number : ");
+		int n=sc.nextInt();
+
+		if(n%2==0)
+			System.out.println("It is even number");
+		else
+			System.out.println("It is odd number");
+	}
+}
+
+
+
+Q)Write a java program to find out given number is odd or not?
+
+import java.util.Scanner;
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+
+		System.out.println("Enter the Number : ");
+		int n=sc.nextInt();
+
+		if(n%2!=0 || n%2==1)
+			System.out.println("It is odd number");
+		else
+			System.out.println("It is not odd number");
+	}
+}
+
+Q)Write a java program to check given year is a leap year or not?
+
+import java.util.Scanner;
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+
+		System.out.println("Enter the year : ");
+		int year=sc.nextInt();
+
+		if(year%4==0)
+			System.out.println("It is leap year");
+		else
+			System.out.println("It is not leap year");
+	}
+}
+
+Q)Write a java program to check given alphabet is a vowel or not?
+
+import java.util.Scanner;
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+
+		System.out.println("Enter the Alphabet :");
+		char ch=sc.next().charAt(0);
+
+		if(ch=='a' || ch=='e' || ch=='i' || ch=='o' || ch=='u')
+			System.out.println("It is a vowel");
+		else
+			System.out.println("It is not a vowel");
+		
+	}
+}
+
+
+
+iii) if else if ladder 
+------------------------
+It is used to execute the source code based on multiple conditions.
+
+syntax:
+---------
+	if(cond1)
+	{
+		- //code to be execute if cond1 is true 
+	}
+	else if(cod2)
+	{
+		- //code to be execute if cond2 is true 
+	}
+	else if(cond3)
+	{
+		- //code to be execute if cond3 is true 
+	}
+	else
+	{
+		- //code to be execute if all conditions are false 
+	}
+
+ex:
+----
+import java.util.Scanner;
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+
+		System.out.println("Enter the option : ");
+		int option=sc.nextInt();
+
+		if(option==100)
+			System.out.println("It is police number");
+		else  if(option==103)
+			System.out.println("It is enquiry number");
+		else  if(option==108)
+			System.out.println("It is emergency number");
+		else
+			System.out.println("Invalid option");
+		
+	}
+}
+
+Q)Write a java program to check given alphabet is a upper case letter, 
+lower case letter ,digit or special symbol?
+
+import java.util.Scanner;
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+
+		System.out.println("Enter the Alphabet :");
+		char ch=sc.next().charAt(0);
+
+		if(ch>='A' && ch<='Z')
+			System.out.println("It is upper case letter");
+		else if(ch>='a' && ch<='z')
+			System.out.println("It is lower case letter");
+		else if(ch>='0' && ch<='9')
+			System.out.println("It is digit");
+		else
+			System.out.println("It is a special symbol");
+		
+	}
+}
+
+Q)Write a java program to check given alphabet is a vowel or not?
+
+vowels : a e i o u 
+
+ex:
+
+import java.util.Scanner;
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+
+		System.out.println("Enter the Alphabet :");
+		char ch=sc.next().charAt(0);
+
+		if(ch=='a')
+			System.out.println("It is a vowel");
+		else if(ch=='e')
+			System.out.println("It is a vowel");
+		else if(ch=='i')
+			System.out.println("It is a vowel");
+		else if(ch=='o')
+			System.out.println("It is a vowel");
+		else if(ch=='u')
+			System.out.println("It is a vowel");
+		else
+			System.out.println("It is not a vowel");
+		
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

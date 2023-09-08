@@ -1,0 +1,111 @@
+Institute Name : Ihub Talent Management / Quality Thought 
+
+Websites       : www.ihubtalent.com  / www.qualitythought.in 
+
+Trainer        : Niyaz Sir 
+
+Experience     : 11+ years of experience in development and training.
+
+		 Developer - verizon company (contract employee)
+		 Trainer   - Ihubtalent /qualitythought
+
+Batch No       : IH-JAVA-019
+
+---------------------------------------------------------------------------------
+Course Name 	: 	Full Stack Java Development Course 
+
+Notes		:	Watsapp Group(IH-JAVA-019)
+
+Free classes	:	Aptitute classes 
+
+			Communication classes 
+
+			Free Recorded Videos 
+
+Lab Session	:	Lab faculity (09:00 am to 06:00 pm)
+
+Project		:	Employee Management System 
+
+Realtime Tools	:	Git/GITHUB , Maven/Gradle , Junit  (SDLC,Agile methodology)
+				
+Class Timing	:	10:30 am to 12:00 pm 
+
+Mode		:	Offline/Online 
+
+Duration	:	100 working days
+
+Placement Team	:	Prasad sir and  Rajareddy sir .
+
+
+			
+			Full stack Java Development
+			(Full stack Developer)
+				|
+	|-----------------------------------------------------|
+   FrontEnd Technologies				BackEnd Technologies
+   (FrontEnd Developer)					(Backend Developer)
+	> HTML5						> Core Java
+	> CSS3						> Advanced Java
+	> JavaScript 						> JDBC
+	> Bootstrap5						> Servlets
+	> React/ReactJS 					> JSP
+							> Oracle Database 
+								> SQL
+								> PL/SQL
+							> Frameworks 
+								> Spring Boot
+								> Microservices 
+
+Programming language
+====================
+A language which is used to communicate between user and computer is called programming language.
+
+Programming language acts like a mediator or interface between user and computer.
+
+Diagram: introduction1.1
+
+
+Java
+=======
+Object oriented programming language
+Platform independent programming language
+Case sensitive programming language
+Strongly typed checking language
+High level programming language
+Open source programming language
+
+Java software (JDK software) --> 1995 (James Gosling)
+
+Sun micro system --> Oracle Corporation 
+
+C
+====
+Procedure oriented programming language
+Platform dependent programming language
+Case sensitive programming language
+Loosely typed checking language
+Middle level language (LOW + HIGH)
+
+
+Interview Question
+====================
+Q)What is java?
+
+Java is a object oriented ,platform independent, case sensitive, strongly typed checking, high level , open source programming language developed by james gosling in the year of 1995.
+
+	
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+		
+

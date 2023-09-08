@@ -1,0 +1,561 @@
+Q)Write a java program to perform sum of two binary numbers?
+
+input:
+	1010 
+	0101 
+output:
+	1111
+
+ex:
+----
+import java.util.Scanner;
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+
+		System.out.println("Enter the First Binary Number :");
+		String binary1=sc.next(); // 1010
+
+		System.out.println("Enter the Second Binary Number :");
+		String binary2=sc.next(); // 0101
+
+		//convert inputs to decimal 
+		int a=Integer.parseInt(binary1,2);
+		int b=Integer.parseInt(binary2,2);
+
+		int c=a+b;
+
+		String result=Integer.toBinaryString(c);	
+		System.out.println("Sum of two binary numbers is ="+result);
+	}
+}
+
+Inner classes
+===============
+Sometimes we will declare a class inside another class such concept is called inner class.
+ex:
+	class  Outer_class
+	{
+		class Inner_class
+		{
+			-
+			- //code here 
+			-
+		}
+	}
+
+Inner classes introduced as a part of event handling to remove GUI(Graphical User interface) bugs.
+
+But because of powerful features and benefits of inner classes , programmers started to use inner classes in our regular programming.
+
+Inner class does not support static members.
+
+
+Accessing inner class data from static area of a outer class
+-----------------------------------------------------------
+class Outer
+{
+	class Inner
+	{
+		//non-static method 
+		public void m1()
+		{
+			System.out.println("M1-Method");
+		}
+	}
+	public static void main(String[] args)
+	{
+		Outer.Inner i=new Outer().new Inner();
+		i.m1();
+	}
+}
+Note:
+------
+When we compile above program we will get two .class files i.e
+Outer.class and Outer$Inner.class
+
+
+ex:
+----
+class Outer
+{
+	class Inner
+	{
+		//non-static method 
+		public void m1()
+		{
+			System.out.println("M1-Method");
+		}
+	}
+	public static void main(String[] args)
+	{
+		new Outer().new Inner().m1();
+	}
+}
+
+Accessing inner class data from non-static area of a outer class
+-----------------------------------------------------------
+class Outer
+{
+	class Inner
+	{
+		//non-static method 
+		public void m1()
+		{
+			System.out.println("M1-Method");
+		}
+	}
+
+	//non-static method
+	public void m2()
+	{
+		Inner i=new Inner();
+		i.m1();
+	}
+	public static void main(String[] args)
+	{
+		Outer o=new Outer();
+		o.m2();
+	}
+}
+
+Enum
+======
+Enum is a group of named constants.
+
+Enum is also known as special class.
+
+Enum concept introduced in 1.5v.
+
+Using enum we can created our own datatype called enumerated datatype.
+
+Compare to old language enum , java enum is more powerful.
+
+syntax:
+-------
+	enum   enum_type
+	{
+		value1,value2,...,valueN
+	}	
+
+ex:
+---
+	enum  Months
+	{
+		JAN,FEB,MAR
+	}
+
+Internal implementation of enum
+------------------------------------
+Every enum internally consider as a class concept and it extends with java.lang.Enum class.
+
+Every enum constant is a reference variable of enum type.
+
+
+enum   Months			public final class Months extends java.lang.Enum
+{				{
+	JAN,FEB,MAR  ==>		public static final Months JAN=new Months();
+}					public static final Months FEB=new Months();
+					public static final Months MAR=new Months();
+				}
+
+
+Declaration and Usage of enum
+-------------------------------
+enum Months
+{
+	JAN,FEB,MAR
+}
+class Test
+{
+	public static void main(String[] args)
+	{
+			Months m=Months.JAN;
+			System.out.println(m);
+	}
+}
+
+ex:
+---
+enum Months
+{
+	JAN,FEB,MAR
+}
+class Test
+{
+	public static void main(String[] args)
+	{
+			Months m=Months.DEC;
+			System.out.println(m);// C.T.E cannot find symbol
+	}
+}
+
+ex:
+----
+enum Months
+{
+	JAN,FEB,MAR
+}
+class Test
+{
+	public static void main(String[] args)
+	{
+		Months m=Months.FEB;
+		switch(m)
+		{
+			case JAN : System.out.println("January"); break;
+			case FEB : System.out.println("February"); break;
+			case MAR : System.out.println("March"); break;
+		}
+	}
+}
+
+java.lang.Enum 
+--------------------
+Power to enum will be inherited from java.lang.Enum class.
+
+Enum class contains following two methods.
+
+1) values()
+-------------
+	It is used to read group of constants from enum.
+
+2) ordinal() 
+-----------
+	It is used to display ordinal numbers.
+
+ex:
+-----
+enum Months
+{
+	JAN,FEB,MAR
+}
+class Test
+{
+	public static void main(String[] args)
+	{
+		Months[] m=Months.values();
+
+		//for each loop
+		for(Months m1:m)
+		{
+			System.out.println(m1+"---------------"+m1.ordinal());
+		}
+		
+	}
+}
+
+When compare to old language enum , java enum is more powerful because in addition to constants we can declare variables, methods and constructors.
+
+ex:
+enum Months
+{
+	JAN,FEB,MAR;
+
+	Months()
+	{
+		System.out.println("constructor");
+	}
+}
+class Test
+{
+	public static void main(String[] args)
+	{
+		Months m=Months.JAN;
+		
+	}
+}
+
+ex:
+----
+enum Months
+{
+	JAN,FEB,MAR;
+
+	static int i=10;
+
+	public static void main(String[] args)
+	{
+		System.out.println(i);
+	}
+}
+
+
+Q)Types of objects in java?
+
+We have two types of objects in java.
+
+1)Immutable object 
+----------------
+After object creation if we perform any changes then for every change a new object will be created such behaviour is called immutable object.
+ex:
+	String
+	Wrapper classes 
+
+2)Mutable object 
+------------------
+After object creation if we perform any changes then all the required changes will be performed in a single object is called mutable object.
+ex:
+	StringBuffer
+	StringBuilder 
+
+
+String
+========
+It is a collection of characters which is enclosed in a double quotation.
+
+case1:
+------
+Once if we create a String object we can't perform any changes.If we perform any changes then for every change a new object will be created such behaviour is called immutability of an object.
+
+Diagram: java31.1
+
+ex:
+----
+class Test
+{
+	public static void main(String[] args)
+	{
+		String s=new String("bhaskar");
+
+		s.concat("solution");
+
+		System.out.println(s);//bhaskar
+	}
+}
+
+ex:2
+----
+class Test
+{
+	public static void main(String[] args)
+	{
+		String s=new String("bhaskar");
+
+		s=s.concat("solution");
+
+		System.out.println(s);//bhaskarsolution
+	}
+}
+
+case2:
+------
+What is the difference between == and .equals() method?
+
+==
+-----
+It is a equality operator or comparision operator.
+
+It is used to reference comparition or address comparision.
+
+ex:
+class Test
+{
+	public static void main(String[] args)
+	{
+		String s1=new String("bhaskar");
+
+		String s2=new String("solution");
+
+		System.out.println(s1==s2);//false
+	}
+}	
+
+.equals()
+---------
+It is a method present in String class.
+
+It is used for content comparision and it is case sensitive.
+
+ex:
+
+class Test
+{
+	public static void main(String[] args)
+	{
+		String s1=new String("bhaskar");
+
+		String s2=new String("solution");
+
+		System.out.println(s1.equals(s2));//false 
+	}
+}
+
+ex:
+--
+class Test
+{
+	public static void main(String[] args)
+	{
+		String s1=new String("bhaskar");
+
+		String s2=new String("bhaskar");
+
+		System.out.println(s1.equals(s2));//true
+	}
+}
+
+case3:
+-------
+Whenever we create String object , two objects will be created one is on heap  and 
+another on SCP (String Constant Pool) area.But 's' always points to heap area.
+
+Diagram: java31.2
+
+
+Object creation in SCP area is always optional.
+First JVM will check is there any object is created with same content or not.If it is created then it simply refers to that object.
+If it is not created then JVM will create a new object.Hence there is no chance of having duplicate objects in SCP area.
+
+Even though SCP objects do not have any reference garbage collector can't access them.
+
+SCP objects will destroy when JVM shutdowns or terminated.
+
+Diagram: java31.3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

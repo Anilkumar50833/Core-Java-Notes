@@ -1,0 +1,937 @@
+Arithmetic operators
+-------------------
+% - modules 
+/ - division 
+* - multiplication
++ - addition
+- - subtraction 
+
+ex:
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		int i= 5+6%2+7/2+2*6-3;
+		System.out.println(i);//17
+	}
+}
+/*
+	5  +  6%2  +  7/2  +  2*6-3
+
+	5  +  0    +  3    +  12-3
+	
+	20-3
+   
+    17 
+*/
+
+Relational operators
+=======================
+
+ex:
+--
+class Test 
+{
+	public static void main(String[] args)
+	{
+		System.out.println(10 < 20); // true 
+
+		System.out.println(10 <= 20); // true 
+
+		System.out.println(10 > 20); // false
+
+		System.out.println(10 >= 10);//true 
+
+		System.out.println(10 == 10); // true 
+
+		System.out.println(10 != 20); // true 
+
+		System.out.println(10 == 20); // false
+
+		System.out.println(10 != 10); // false 
+	}
+}
+
+Shift operators
+=================
+
+Right shift operators (>>)
+---------------------------
+10  >> 1 = 10/2
+
+10  >> 2 = 10/4
+
+10  >> 3 = 10/8
+
+10  >> 4 = 10/16
+
+ex:
+-----
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		int  i=100 >> 4;
+
+		System.out.println(i); // 100 / 16 = 6
+	}
+}
+
+ex:
+-----
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		int  i=10 >> 6;
+
+		System.out.println(i); // 10 / 64 = 0
+	}
+}
+
+ex:
+-----
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		int  i=10 >> 3;
+
+		System.out.println(i); // 10 / 8 = 1 
+	}
+}
+
+
+
+Left shift operators (<<)
+---------------------------
+10  << 1 = 10*2
+
+10  << 2 = 10*4
+
+10  << 3 = 10*8
+
+10  << 4 = 10*16
+
+ex:
+-----
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		int  i=10 << 5;
+
+		System.out.println(i); // 10 * 32= 320
+	}
+}
+
+Unary operators 
+================
+
+Increment / Decrement operators (++/--)
+---------------------------------------
+We have two types of increment operators.
+
+1)post increment 
+	ex:
+		i++;
+
+2)Pre increment 
+	ex:
+		++i;
+
+We have two types of decrement operators.
+
+1)Post decrement 
+	ex:
+		i--;
+
+2)Pre decrement 
+	ex:
+		--i;
+
+
+Post increment/decrement 
+--------------------------
+Rule1: First take 
+
+Rule2 : Then change 
+
+ex:
+-----
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		int i=10;
+
+		i++;
+
+		System.out.println(i); //11 
+	}
+}
+
+ex:
+----
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		int i=10;
+
+		System.out.println(i++);
+	}
+}
+
+ex:
+----
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		int i=10;
+
+		int j=i++;
+
+		System.out.println(i+" "+j);// 11 10
+	}
+}
+
+ex:
+----
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		int i=10;
+
+		int j=i++ + i++; //10 + 11
+
+		System.out.println(i+" "+j);// 12 + 21
+	}
+}
+
+ex:
+----
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		int i=10;
+
+		int j=i-- + i--; // 10 + 9 
+
+		System.out.println(i+" "+j);// 8 19
+	}
+}
+
+ex:
+----
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		int i=10;
+
+		int j=i++ + i++ + i++; // 10 + 11 + 12
+
+		System.out.println(i+" "+j);//13  33
+	}
+}
+
+Pre increment/decrement
+------------------------
+Rule1 : First change 
+
+Rule2 : Then take 
+
+ex:
+---
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		int i=10;
+
+		++i;
+
+		System.out.println(i);//11
+	}
+}
+
+ex:
+----
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		int i=10;
+
+		int j=++i;
+
+		System.out.println(i+" "+j);//11  11
+	}
+}
+
+ex:
+-----
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		int i=10;
+
+		int j=++i + ++i ;
+
+		System.out.println(i+" "+j);//12  23
+	}
+}
+
+ex:
+----
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		int i=10;
+
+		int j=--i + --i;
+
+		System.out.println(i+" "+j);//8 17
+	}
+}
+
+ex:
+-----
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		int i=10;
+
+		System.out.println(i++ + ++i);//10 +12 = 22
+	}
+}
+
+ex:
+-----
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		int i=100;
+
+		100++;
+
+		System.out.println(i);//C.T.E 
+	}
+}
+
+ex:
+----
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		int i=10;
+
+		System.out.println(++i++); // C.T.E 
+
+	}
+}
+
+Types of blocks in java
+=========================
+A block is a set of statements which is enclosed in a curly brace i.e {}.
+
+ex:
+	{
+		-
+		- //set of statements 
+		-
+	} 
+
+We have three types of blocks in java.
+
+1) Instance block 
+
+2) Static block 
+
+3) Local block 
+
+1) Instance block 
+------------------
+Instance block is used to initialize the instance variables.
+
+Instance block will execute at the time of object creation only.
+
+syntax:
+	//instance block
+	{
+		-
+		- // set of statements 
+		-
+	}
+
+ex:1
+----
+class Test 
+{
+	//instance block
+	{
+		System.out.println("instance-block");
+	}
+
+	public static void main(String[] args) 
+	{
+		System.out.println("main-method");
+	}
+}
+o/p:
+	main-method
+
+ex:2
+----
+class Test 
+{
+	//instance block
+	{
+		System.out.println("instance-block");
+	}
+
+	public static void main(String[] args) 
+	{
+		System.out.println("main-method");
+		Test t=new Test();
+	}
+}
+o/p:
+
+main-method
+instance-block
+
+ex:3
+----
+class Test 
+{
+	//instance block
+	{
+		System.out.println("instance-block");
+	}
+
+	public static void main(String[] args) 
+	{
+		Test t1=new Test();
+		System.out.println("main-method");
+		Test t2=new Test();
+	}
+}
+o/p:
+instance-block
+main-method
+instance-block
+
+ex:4
+------
+class Test 
+{
+	//instance variable
+	int i;
+
+	//instance block
+	{
+		i=100;	
+	}
+
+	public static void main(String[] args) 
+	{
+		Test t=new Test();
+		System.out.println(t.i);//100
+	}
+}
+
+
+1) Static block 
+------------------
+Static block is used to initialize the static variables.
+
+Static block will execute at the time of classloading.
+
+syntax:
+	//static block
+	static
+	{
+		-
+		- // set of statements 
+		-
+	}
+
+ex:1
+----
+class Test 
+{
+	//static block
+	static
+	{
+		System.out.println("static-block");
+	}
+
+	public static void main(String[] args) 
+	{
+		System.out.println("main-method");
+	}
+}
+o/p:
+static-block
+main-method
+
+
+ex:2
+----
+class Test 
+{
+	//static variable
+	static int i;
+
+	//static block
+	static
+	{
+		i=500;
+	}
+
+	public static void main(String[] args) 
+	{
+		System.out.println(i);//500
+	}
+}
+
+3) Local block 
+------------------
+Local block is used to initialize the local variables.
+
+Local block will execute just like normal statements.
+
+syntax:
+	//local block
+	{
+		-
+		- // set of statements
+		-
+	}
+
+ex:
+----
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("stmt1");
+		//local block
+		{
+			System.out.println("stmt2");
+		}
+		System.out.println("stmt3");
+	}
+}
+
+ex:
+----
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		//local variable
+		int i;
+
+
+		//local block
+		{
+			i=10;
+		}
+
+		System.out.println(i);
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

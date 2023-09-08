@@ -1,0 +1,134 @@
+Q)Differences between C++ and Java?
+
+C++					Java
+-----------				--------
+It is developed by Bjarne Stroustrup.	It is developed by James Gosling.
+
+It is a partial object oriented 	It is a purely object oriented programming
+programming language.			language.
+
+It is a platform dependent.		It is a platform independent.
+
+It supports multiple inheritance.	It does not support multiple inheritance.
+
+It supports pointers.			It does not support pointers.
+
+It supports operator overloading.	It does not support operator overloading.
+
+Memory allocation and deallocation 	Memory allocation and deallocation will
+will taken care by a programmer.	taken care by a JVM.
+
+It supports access specifiers i.e 	It supports access modifiers i.e 
+public,private and protected.		default,public,private and protected.
+
+It supports preprocessor directory(#).	It does not support preprocessor directory.
+
+It supports three types of loops i.e 	It supports four types of loops i.e 
+do while loop, while loop and for 	do while loop, while loop , for loop and 
+loop.					for each loop.
+
+We need to save our program with 	We need to save our program with .java
+.cpp extension.				extension.
+
+
+Q)Differences between Python and Java?
+
+Python					Java
+---------				-----
+It is a product of Microsoft.		It is a product of Oracle Corporation.	
+
+It is developed by Guido Van Rossum.	It is developed by James Gosling.
+
+It is a scripting language.		It is a object oriented programming language.
+
+It is a interpreted language.		It is a compiled language.
+
+It is a dynamically typed language.	It is a statically typed language.
+
+It contains PVM.			It contains JVM.
+
+It contains less code then java.	It contains more code then python.
+
+There is less security.			It is highly secured programming language.
+
+Performance is low.			Performance of high.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

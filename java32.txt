@@ -1,0 +1,400 @@
+Interning of String object
+=========================
+With the help of heap object reference , if we need to corresponding SCP object reference then we need to use intern() method.
+
+Diagram: java32.1
+
+
+String important methods
+=========================
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		String str="bhaskar";
+		System.out.println(str.charAt(3)); // s 
+		System.out.println(str.length()); //7
+		System.out.println(str.toUpperCase()); //BHASKAR
+		System.out.println(str.toLowerCase()); //bhaskar
+		System.out.println(str.equals("bhaskar")); // true 
+		System.out.println(str.equalsIgnoreCase("BHASKAR")); // true 
+		System.out.println(str.replace('a','A')); // bhAskAr
+		System.out.println(str.indexOf('a')); // 2 
+		System.out.println(str.lastIndexOf('a')); // 5
+	}
+}
+
+
+Q)Write a java program to accept one string and display it ?
+
+import java.util.Scanner;
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		
+		System.out.println("Enter the string :");
+		String str=sc.next();
+
+		System.out.println("Welcome :"+str);
+
+	}
+}
+
+approach2
+----------
+import java.util.Scanner;
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		
+		System.out.println("Enter the string :");
+		String str=sc.nextLine();
+
+		System.out.println("Welcome :"+str);
+
+	}
+}
+
+
+Q)Write a java program to remove all the special characters from string?
+
+input:
+	Ihub_$T@al#ent12
+
+output:
+	Ihubtalent12 
+
+
+ex:
+---
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		
+		String str="Ihub_$T@al#ent12";
+
+		str=str.replaceAll("[^a-zA-Z0-9]","");
+
+		System.out.println(str);
+
+	}
+}
+
+Q)Write a java program to concatinate two strings?
+
+input:
+	str1 = "ihub";
+	str2 = "talent";
+
+output:
+	ihubtalent  
+
+ex:
+ 
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		
+		String str1="ihub";
+		String str2="talent";
+
+		str1=str1.concat(str2);
+
+		System.out.println(str1);//ihubtalent
+	}
+}
+
+Q)Write a java program to check given strings are equals or not?
+
+input:
+	String str1="bhaskar";
+	String str2="bhaskar";
+
+output:
+	Both are equals 
+
+ex:
+---
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		
+		String str1="bhaskar";
+		String str2="bhaskar";
+
+		if(str1.equals(str2))
+			System.out.println("Both are equals");
+		else
+			System.out.println("Both are not equals");
+	}
+}
+
+Q)Write a java program to display reverse of a string?
+
+input:
+	hello
+
+output:
+	olleh 
+
+ex:
+
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		
+		String str="hello";
+
+		//convert string to char array 
+		char[] carr=str.toCharArray();
+
+		String rev="";
+
+		//reading reverse order
+		for(int i=carr.length-1;i>=0;i--)
+		{
+			rev+=carr[i];
+		}
+
+		System.out.println("Reverse of a string is ="+rev);
+	}
+}
+
+Q)Write a java program to find out given string is palindrome or not?
+
+input:
+	racar 
+
+output:
+	It is a palindrome number
+
+ex:
+
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		
+		String str="racar";
+
+		//convert string to char array 
+		char[] carr=str.toCharArray();
+
+		String rev="";
+
+		//reading reverse order
+		for(int i=carr.length-1;i>=0;i--)
+		{
+			rev+=carr[i];
+		}
+
+		if(str.equals(rev))
+			System.out.println("It is a palindrome string ");
+		else
+			System.out.println("It is not a palindrome string");
+	}
+}
+
+Q)Write a java program to display reverse of a sentence?
+
+input:
+	This Is Java Class
+
+output:
+	Class Java Is This 
+
+ex:
+
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		
+		String str="This Is Java Class";
+
+		String[] sarr=str.split(" ");
+
+		//reading reverse
+		for(int i=sarr.length-1;i>=0;i--)
+		{
+			System.out.print(sarr[i]+" ");
+		}
+	}
+}
+
+Q)Write a java program to display reverse of each word in a string?
+
+input:
+	This Is Java Class
+
+output:
+	sihT sI avaJ ssalC 
+
+ex:
+---
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		
+		String str="This Is Java Class";
+
+		String[] sarr=str.split(" ");
+
+		//for each loop
+		for(String s:sarr)
+		{
+			//convert string to char array
+			char[] carr=s.toCharArray();
+
+			//reading reverse
+			for(int i=carr.length-1;i>=0;i--)
+			{
+				System.out.print(carr[i]);
+			}
+			//space
+			System.out.print(" ");
+		}
+		
+	}
+}
+
+Q)Write a java program to display duplicate characters from string?
+
+input:
+	google 
+
+output:
+	o g 
+
+ex:
+----
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		String str="google";
+	
+		String characters="";
+		String duplicates="";
+
+		for(int i=0;i<str.length();i++)
+		{
+			String current=Character.toString(str.charAt(i));
+
+			if(characters.contains(current))
+			{
+				if(!duplicates.contains(current))
+				{
+					duplicates+=current;
+					continue;
+				}
+			}
+			characters+=current;
+		}
+		System.out.println(duplicates);
+	}
+}
+
+Q)Write a java program to display distinct/Unique characters from string?
+
+input:
+	google 
+
+output:
+	gole 
+
+
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		String str="google";
+	
+		String characters="";
+		String duplicates="";
+
+		for(int i=0;i<str.length();i++)
+		{
+			String current=Character.toString(str.charAt(i));
+
+			if(characters.contains(current))
+			{
+				if(!duplicates.contains(current))
+				{
+					duplicates+=current;
+					continue;
+				}
+			}
+			characters+=current;
+		}
+		System.out.println(characters);
+	}
+}
+
+Sample example to practice
+---------------------------
+class Test 
+{
+	public static String getConcatinate(String str1,String str2)
+	{
+		return str1+str2;
+	}
+
+	public static void main(String[] args) 
+	{
+		String s1="ihub";
+		String s2="talent";
+
+		//caller 
+		System.out.println(getConcatinate(s1,s2));
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

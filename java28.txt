@@ -1,0 +1,744 @@
+Has-A relationship
+===================
+Has-A relationship is also known as composition and aggregation.
+
+There is no specific keyword to implements Has-A relationship but mostly we will use new operator.
+
+The main objective of Has-A relationship is to provide reusability.
+
+Has-A relationship will increase the dependency between two components.
+
+ex:
+	class Engine 
+	{
+		-
+		- //Engine specific functionality 
+		-
+	}
+	class Car 
+	{
+		Engine  e = new Engine();
+	}
+
+ex:
+----
+class Ihub
+{
+	public String courseName()
+	{
+		return "Java FSD";
+	}
+	public double courseFee()
+	{
+		return 30000d;
+	}
+	public String trainerName()
+	{
+		return "Niyaz Sir";
+	}
+}
+class Usha
+{
+	public void getCourseDetails()
+	{
+		Ihub i=new Ihub();
+		System.out.println("Course Name :"+i.courseName());
+		System.out.println("Course Fee :"+i.courseFee());
+		System.out.println("Trainer Name :"+i.trainerName());
+	}
+}
+class Student
+{
+	public static void main(String[] args)
+	{
+		Usha u=new Usha();
+		u.getCourseDetails();
+	}
+}
+
+composition
+-----------
+Without existing container object there is no chance of having contained object then the relationship between container and contained object is called composition which is strongly association.
+
+Diagram: java28.1
+
+
+aggregation 
+-----------
+Without existing container object there is a chance of having contained object then the relationship between container and contained object is called aggregation which is weakly association.
+
+Diagram: java28.2
+
+
+
+Method Overloading
+====================
+Having same method name with different parameters in a single class is called method overloading.
+
+All the methods present in a class are called overloaded methods.
+
+Method overloading will reduce complexity in the programming.
+
+ex:
+---
+class A
+{
+	//overloaded methods 
+	public void methodOne()
+	{
+		System.out.println("zero-arg method");
+	}
+	public void methodOne(int i)
+	{
+		System.out.println("int-arg method");
+	}
+	public void methodOne(double d)
+	{
+		System.out.println("double-arg method");
+	}
+}
+class Test
+{
+	public static void main(String[] args)
+	{
+		A a=new A();
+		a.methodOne();
+		a.methodOne(10);
+		a.methodOne(10.5d);
+	}
+
+}
+
+Method overriding
+==================
+Having same method name with same parameters in two different classes is called method overriding.
+
+Methods which are present in parent class are called overridden methods.
+
+Methods which are present in child class are called overriding methods.
+
+ex:
+----
+class Parent
+{
+	//overridden methods 
+	public void property()
+	{
+		System.out.println("Cash+Gold+Land");
+	}
+	public void marry()
+	{
+		System.out.println("Subhalakshmi");
+	}
+}
+class Child extends Parent 
+{
+	//overriding methods 
+	public void marry()
+	{
+		System.out.println("Rashmika");
+	}
+}
+class Test
+{
+	public static void main(String[] args)
+	{
+		Parent p=new Parent();
+		p.property(); //Cash+gold+land
+		p.marry(); // Subhalakshmi
+
+		Child c=new Child();
+		c.property(); // Cash+gold+land
+		c.marry(); // Rashmika
+
+
+		Parent p1=new Child();
+		p1.property(); // Cash+gold+land
+		p1.marry(); // Rashmika
+
+	}
+}
+
+If we declare any method as final then overriding of that method is not possible.
+
+ex:
+----
+class Parent
+{
+	//overridden methods 
+	public void property()
+	{
+		System.out.println("Cash+Gold+Land");
+	}
+	public final void marry()
+	{
+		System.out.println("Subhalakshmi");
+	}
+}
+class Child extends Parent 
+{
+	//overriding methods 
+	public void marry()
+	{
+		System.out.println("Rashmika");
+	}
+}
+class Test
+{
+	public static void main(String[] args)
+	{
+		Parent p=new Parent();
+		p.property(); //Cash+gold+land
+		p.marry(); // Subhalakshmi
+
+		Child c=new Child();
+		c.property(); // Cash+gold+land
+		c.marry(); // Rashmika
+
+
+		Parent p1=new Child();
+		p1.property(); // Cash+gold+land
+		p1.marry(); // Rashmika
+
+	}
+}
+
+Q)Can we overload main method in java?
+
+Yes , it is possible to overload main method in java. But JVM always execute main method with String[] parameter.
+
+ex:
+
+
+class Test
+{
+	public static void main(String[] args)
+	{
+		System.out.println("string-arg method");
+	}
+	public static void main(int[] iarg)
+	{
+		System.out.println("int-arg method");
+	}
+}
+
+
+Method Hiding
+================
+Method hiding is exactly same as method overriding with following differences.
+
+Method overriding				Method Hiding
+-----------------------				---------------
+All the methods present in method overriding	Methods present in method hiding 
+must be non-static.				must be static.
+
+Method resolution will taken care by JVM 	Method resolution will taken care 
+based on runtime object.			by compiler based on reference type.
+
+It is also known as runtime polymorphism,	It is also known as compile time 
+dynamic polymorphism, late binding.		polymorphism , static polymorphism,
+						early binding.
+
+ex:
+
+class Parent
+{
+	//overridden methods 
+	public static void property()
+	{
+		System.out.println("Cash+Gold+Land");
+	}
+	public static void marry()
+	{
+		System.out.println("Subhalakshmi");
+	}
+}
+class Child extends Parent 
+{
+	//overriding methods 
+	public static void marry()
+	{
+		System.out.println("Rashmika");
+	}
+}
+class Test
+{
+	public static void main(String[] args)
+	{
+		Parent p=new Parent();
+		p.property(); //Cash+gold+land
+		p.marry(); // Subhalakshmi
+
+		Child c=new Child();
+		c.property(); // Cash+gold+land
+		c.marry(); // Rashmika
+
+
+		Parent p1=new Child();
+		p1.property(); // Cash+gold+land
+		p1.marry(); // Subhalakshmi
+
+	}
+}
+
+Polymorphism
+===============
+Polymorphism has taken from Greek word.
+
+Here poly means many and morphism means forms.
+
+The ability to represent in different forms is called polymorphism.
+
+The main objective of polymorphism is to provide flexibility.
+
+In java, polymorphism is divided into two types.
+
+1) compile time polymorphism / static polymorphism / early binding
+----------------------------------------------
+A polymorphism which exhibits at compile time is called compile time polymorphism.
+ex:
+	Method overloading
+	Method hiding
+
+2) Runtime polymorphism / dynamic polymorphism / late binding
+-----------------------------
+A polymorphism which exhibits at runtimeis called run time polymorphism.
+ex:
+	Method overriding.
+	
+
+Diagram: java28.3
+
+
+Constructor
+================
+A constructor is a special method which is used to initialize an object.
+ex:
+	Test t=new Test();
+
+Having same name as class name is called constructor.
+
+A Constructor will execute when we create an object.
+
+A constructor will accept following modifiers.
+ex:
+	default 
+	public 
+	private 
+	protected 
+
+A constructor does not allow any returntype ,if we take anyreturn type then we won't get any compile time error or runtime error.
+
+In java, constructors are divided into two types.
+
+1)userdefined constructor 
+
+2)Default constructor 
+
+1)userdefined constructor 
+------------------------
+Constructor which is created by the user based on the application requirement is called userdefined constructor.
+
+It is divided into two types.
+
+i) Zero-Argument constructor
+
+ii) Parameterized constructor 
+
+i) Zero-Argument constructor
+-------------------------
+Suppose if we are not passing atleast one argument to userdefined constructor then such type of constructor is called zero-argument constructor.
+
+ex:
+---
+class Test
+{
+	//constructor
+	Test()
+	{
+		System.out.println("zero-arg const");
+	}
+	public static void main(String[] args)
+	{
+		System.out.println("main method");
+	}
+}
+
+ex:
+-----
+class Test
+{
+	//constructor
+	Test()
+	{
+		System.out.println("zero-arg const");
+	}
+	public static void main(String[] args)
+	{
+		System.out.println("main method");
+		Test t=new Test();
+	}
+}
+o/p:
+main method
+zero-arg const
+
+ex:
+----
+class Test
+{
+	//constructor
+	Test()
+	{
+		System.out.println("zero-arg const");
+	}
+	public static void main(String[] args)
+	{
+		Test t1=new Test();
+		System.out.println("main method");
+		Test t2=new Test();
+	}
+}
+o/p:
+zero-arg const
+main method
+zero-arg const
+
+
+
+ii) Parameterized constructor 
+-------------------------
+Suppose if we are passing atleast one argument to userdefined constructor then such type of constructor is called parameterized constructor.
+
+ex:
+---
+class Employee
+{
+	//instance variables
+	private int empId;
+	private String empName;
+	private double empSal;
+
+	//parameterized constructor
+	public Employee(int empId,String empName,double empSal)
+	{
+		this.empId=empId;
+		this.empName=empName;
+		this.empSal=empSal;
+	}
+
+	public void getEmployeeDetails()
+	{
+		System.out.println("Employee Id :"+empId);
+		System.out.println("Employee Name :"+empName);
+		System.out.println("Employee Salary :"+empSal);
+	}
+
+}
+class Test
+{
+	public static void main(String[] args)
+	{
+		Employee e=new Employee(101,"Alan",1000d);
+		e.getEmployeeDetails();
+	}
+}
+
+2)Default constructor 
+-----------------------
+It is a compiler generated constructor for every java program where we are not defining atleast zero argument constructor.
+
+We can see default constructor by using below command.
+ex:
+	javap  -c  Test 
+
+Default constructor is a empty implementation.
+
+ex:
+
+class Test
+{
+	//default constructors	
+	Test();
+
+	public static void main(String[] args)
+	{
+		System.out.println("IHUB Hello World");
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

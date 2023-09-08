@@ -1,0 +1,269 @@
+Main method
+============
+Our program contains main method or not. Either it is properly declared or not.
+It is not a responsibility of a compiler to check.
+
+It is a responsibility of a JVM to check for main method.
+
+If JVM won't find main method then it will throw one runtime error called main method not found.
+
+JVM always look for main method with following signature.
+ex:
+	public  static  void  main(String[] args)
+	
+If we perform any changes in above signature then JVM will throw one runtime error called main method not found.
+
+public
+-------
+	JVM wants to call this method from any where.
+
+static
+-----
+	JVM wants to call this method without using object reference.
+
+void
+----
+	Main method does not return anything to JVM.
+
+main
+----
+	It is a identifier given to a main method.
+
+String[] args
+---------
+	It is a command line argument.
+
+We can perform following changes in main method
+-----------------------------------------------
+1) Order of modifiers is not important, if case of public static we can declare    static public also.
+
+   ex:
+	static public void main(String[] args)	
+
+
+2) We can change String[] with following acceptable formats.
+   ex:
+	public static void main(String[] args)
+	public static void main(String   []args)
+	public static void main(String  args[])	
+
+3) We can change String[] with var-arg parameter.
+   ex:
+	public static void main(String... args)
+
+4) We can replace args with any java valid identifier.
+   ex:
+
+5) Main method will accept following modifiers.
+   ex:
+	synchronized, final and strictfp.
+
+
+Command line argument
+=====================
+Arguments which are passing through command prompt such type of arguments are called command line arguments.
+
+In command line argument we need to pass our inputs at the time of runtime command.
+
+ex:
+	javac     Test.java
+
+	java      Test   101  raja   m  1000.0
+			  |    |     |   |______ args[3]
+			  |    |     |__________ args[2]
+			  |    |________________ args[1]	 
+			  |_____________________ args[0]	
+
+
+ex:
+-----
+class  A
+{
+	public static  void main(String[]  args)	
+	{
+		System.out.println(args[0]);
+		System.out.println(args[1]);
+		System.out.println(args[2]);
+		System.out.println(args[3]);
+	}
+}
+
+System.out.println()
+======================
+It is a output statement in java.
+
+If we want to display any userdefined statements and data then we need to use System.out.println() stmt.
+
+syntax:
+		static variable name 
+		|
+	System.out.println();
+	| 		|
+	predefined	predefined method 
+	final 
+	class 
+
+Diagram : java14.1
+
+ex:
+-----
+class  A
+{
+	public static  void main(String[]  args)	
+	{
+		System.out.println("stmt1");
+		System.out.print("stmt2");
+		System.out.printf("stmt3");
+	}
+}
+
+various methods to display the data
+---------------------------------
+1)
+	System.out.println("Hello World");
+
+2)
+	int i=10;
+	System.out.println(i);
+	System.out.println("The value is ="+i);
+
+3)
+	int i=10,j=20;
+	System.out.println(i+" "+j);
+
+
+4) 
+	int i=10,j=20,k=30;
+	System.out.println(i+" "+j+" "+k);
+
+
+Q)What is the difference between System.out.println() and System.err.println() ?
+
+System.out.println()
+-----------------------
+It is used to render the output only on console.
+ex:
+
+class  A
+{
+	public static  void main(String[]  args)	
+	{
+		System.out.println("Hey!");
+
+	}
+}
+
+
+System.err.println()
+---------------------
+It is used to render the output on console as well as in a physical file.
+ex:
+class  A
+{
+	public static  void main(String[]  args)	
+	{
+		System.err.println("Hey!");
+
+	}
+}
+o/p:
+
+javac  A.java
+
+java   A   2>abc.txt
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,304 @@
+3)local variable
+------------------
+To meet temperory requirement a programmer will declare some variables inside methods,blocks and constructors such type of variables is called local variable.
+
+A local variable will be created at the time of execution block and it will destroy when execution block is executed.Hence scope of local variable is same as scope of execution block where it is declared.
+
+A local variable will store in java stack memory. 
+
+ex:1
+-----
+class Test
+{
+	public static void main(String[] args)
+	{
+		//local variable
+		int i=10;
+
+		System.out.println(i);
+	}
+}
+
+Note:
+-----
+If we won't initialize any value to local variable then JVM will not initialize any default value.
+
+ex:2
+-----
+class Test
+{
+	public static void main(String[] args)
+	{
+		//local variable
+		int i;
+
+		System.out.println(i);
+	}
+}
+o/p:
+
+	C.T.E : variable i might not have been initialized
+
+
+A local variable will accept only one modifier i.e final.
+
+ex:
+---
+class Test
+{
+	public static void main(String[] args)
+	{
+		//local variable
+		final int i=10;
+
+		System.out.println(i);//10
+	}
+}
+
+ex:
+----
+class Test
+{
+	public static void main(String[] args)
+	{
+		int i=10;
+
+		i=20;
+
+		i=30;
+
+		System.out.println(i);//30
+	}
+}
+
+ex:
+----
+class Test
+{
+	public static void main(String[] args)
+	{
+		final int i=10;
+
+		i=20;
+
+		i=30;
+
+		System.out.println(i);//C.T.E 
+	}
+}
+
+
+import statements
+==================
+If we are working with import statements then we should not use fully qualified name.
+
+Using short name also we can achieve.
+
+Import statments are used to improve readability of our code.
+
+We have three types of import statements in java.
+
+1)Explicit class import 
+
+2)Implicit class import 
+
+3)Static import 
+
+1)Explicit class import 
+------------------------
+This type of import statement is highly recommanded to use because it will improve readability of our code.
+
+ex:1
+-----
+import java.util.Date;
+class Test
+{
+	public static void main(String[] args)
+	{
+		Date d=new Date();
+		System.out.println(d);
+	}
+}
+
+ex:2
+-----
+import java.util.Date;
+class Test
+{
+	public static void main(String[] args)
+	{
+		Date d=new Date();
+		int h=d.getHours();
+		int m=d.getMinutes();
+		int s=d.getSeconds();
+		System.out.println(h+":"+m+":"+s);
+	}
+}
+
+ex:3
+------
+import java.util.Date;
+class Test
+{
+	public static void main(String[] args)
+	{
+		Date d=new Date();
+		int da=d.getDate();
+		int m=d.getMonth()+1;
+		int y=d.getYear();
+		System.out.println(da+"/"+m+"/"+y);
+	}
+}
+
+In java 1.8 version they have introduce  LocalDate and LocalTime class to 
+display date and time.
+
+A LocalDate and LocalTime class present in java.time package.
+
+ex:4
+-----
+import java.time.LocalDate;
+class Test
+{
+	public static void main(String[] args)
+	{
+		LocalDate date=LocalDate.now();
+		System.out.println(date);
+	}
+}
+
+ex:5
+----
+import java.time.LocalDate;
+import java.time.LocalTime;
+class Test
+{
+	public static void main(String[] args)
+	{
+		LocalDate date=LocalDate.now();
+		System.out.println(date);
+
+		LocalTime time=LocalTime.now();
+		System.out.println(time);
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

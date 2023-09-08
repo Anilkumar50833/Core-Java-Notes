@@ -1,0 +1,602 @@
+Constructor overloading
+=======================
+Having same constructor name with different parameters in a single class is called constructor overloading.
+
+ex:
+
+class A
+{
+	A()
+	{
+		System.out.println("0-arg const");
+	}
+	A(int i)
+	{
+		System.out.println("int-arg const");
+	}
+	A(double d)
+	{
+		System.out.println("double-arg const");
+	}
+}
+class Test
+{
+	public static void main(String[] args)
+	{
+		A a1=new A();
+		A a2=new A(10);
+		A a3=new A(10.5d);
+
+	}
+}
+
+this keyword
+===============
+A "this" keyword is a java keyword which is used to refer current class object reference.
+
+We can utilize this keyword in following ways.
+
+i) To refer current class variables
+
+ii) To refer current class methods 
+
+iii) To refer current class constructors 
+
+i) To refer current class variables
+------------------------------------
+class A
+{
+	int i=10;
+	int j=20;
+
+	A(int i,int j)
+	{
+		System.out.println(i+" "+j); //  100   200
+		System.out.println(this.i+" "+this.j); // 10  20
+	}
+}
+class Test
+{
+	public static void main(String[] args)
+	{
+		A a=new A(100,200);
+	}
+}
+
+ii) To refer current class methods 
+----------------------------------
+class A
+{
+	public void m1()
+	{
+		System.out.println("M1-Method");
+		this.m2();
+	}
+	public void m2()
+	{
+		System.out.println("M2-Method");
+	}
+}
+class Test
+{
+	public static void main(String[] args)
+	{
+		A a=new A();
+		a.m1();
+	}
+}
+
+iii) To refer current class constructors 
+---------------------------------------
+class A
+{
+	A()
+	{
+		System.out.println("0-arg const");
+	}
+	A(int i)
+	{
+		this();
+		System.out.println("int-arg const");
+	}
+	A(double d)
+	{
+		this(10);
+		System.out.println("double-arg const");
+	}
+
+}
+class Test
+{
+	public static void main(String[] args)
+	{
+		A a=new A(10.56d);
+		
+	}
+}
+
+super keyword
+===============
+A "super" keyword is used to refer super class object reference.
+
+We can utilize super keyword in following ways.
+
+i) To refer super class variables
+
+ii)To refer super class methods
+
+iii)To refer super class constructors
+
+
+i) To refer super class variables
+-----------------------------------
+class A 
+{
+	int i=1;
+	int j=2;
+}
+class B extends A 
+{
+	int i=10;
+	int j=20;
+	B(int i,int j)
+	{
+		System.out.println(this.i+" "+this.j); // 10  20
+		System.out.println(super.i+" "+super.j); // 1  2
+		System.out.println(i+" "+j); // 100  200
+	}
+}
+class Test
+{
+	public static void main(String[] args)
+	{
+		B b=new B(100,200);
+	}
+}
+
+ii)To refer super class methods
+---------------------------------
+class A 
+{
+	public void m1()
+	{
+		System.out.println("A-M1 Method");
+	}
+}
+class B extends A 
+{
+	public void m2()
+	{
+		super.m1();
+		System.out.println("B-M2 Method");
+	}	
+}
+class Test
+{
+	public static void main(String[] args)
+	{
+		B b=new B();
+		b.m2();
+	}
+}
+
+
+iii)To refer super class constructors
+------------------------------------
+ex:1
+----
+class A 
+{
+	A()
+	{
+		System.out.println("A constructor");
+	}
+}
+class B extends A 
+{
+	B()
+	{
+		System.out.println("B constructor");
+	}	
+}
+class Test
+{
+	public static void main(String[] args)
+	{
+		B b=new B();
+	}
+}
+
+ex:2
+------
+class A 
+{
+	A()
+	{
+		System.out.println("A constructor");
+	}
+}
+class B extends A 
+{
+	B()
+	{
+		super();
+		System.out.println("B constructor");
+	}	
+}
+class Test
+{
+	public static void main(String[] args)
+	{
+		B b=new B();
+	}
+}
+
+Interfaces
+============
+Interface is a collection of zero or more abstract methods.
+
+Abstract methods are incomplete methods because they ends with semicolon and do not have any body.
+ex:
+	void m1();
+
+It is not possible to created object for interface.
+
+To write the implementation for abstract methods of an interface we will use implementation class.
+
+It is possible to create object for implementation class because it contains method with body.
+
+An interface contains constants i.e public static final.
+
+By default every abstract method is public and abstract.
+ex:
+	public abstract void m1();
+	
+
+syntax:
+------
+	interface  <interface_name>
+	{
+		-
+		- // constants 
+		- // abstract methods 
+		-
+	}
+
+Diagram: java29.1
+
+ex:1
+-----
+interface A
+{
+	public abstract void m1();
+}
+class B implements A
+{
+	public void m1()
+	{
+		System.out.println("M1-Method");
+	}
+}
+class Test
+{
+	public static void main(String[] args)
+	{
+		A a=new B();
+		a.m1();
+	}
+}
+
+ex:2
+------
+interface A
+{
+	public abstract void m1();
+}
+class Test
+{
+	public static void main(String[] args)
+	{
+		//anonymous inner class
+		A a=new A()
+		{
+			public void m1()
+			{
+				System.out.println("M1-Method");
+			}
+		};
+		a.m1();
+	}
+}
+
+If interface contains four methods then we need override all four methods otherwise we will get compile time error.
+
+ex:3
+-----
+interface A
+{
+	public abstract void show();
+	public void display();
+	abstract void see();
+	void view();
+}
+class B implements A 
+{
+	public void show()
+	{
+		System.out.println("show-method");
+	}
+	public void display()
+	{
+		System.out.println("display-method");
+	}
+	public void see()
+	{
+		System.out.println("see-method");
+	}
+	public void view()
+	{
+		System.out.println("view-method");
+	}
+}
+
+class Test
+{
+	public static void main(String[] args)
+	{
+		A a=new B();
+		a.show();
+		a.display();
+		a.see();
+		a.view();
+	}
+}
+
+A class can extends only one class simultenously.
+
+But interface can extends more then one interface simultenously.
+
+ex:
+
+interface A
+{
+	void m1();
+}
+interface B 
+{
+	void m2();
+}
+interface C extends A,B 
+{
+	void m3();
+}
+class D implements C 
+{
+	public void m1()
+	{
+		System.out.println("M1-Method");
+	}
+	public void m2()
+	{
+		System.out.println("M2-Method");
+	}
+	public void m3()
+	{
+		System.out.println("M3-Method");
+	}
+}
+class Test
+{
+	public static void main(String[] args)
+	{
+		C c=new D();
+		c.m1();
+		c.m2();
+		c.m3();
+		
+	}
+}
+
+A class can implements more then one interface.
+	
+ex:
+
+interface Father
+{
+	float HT=6.2f;
+	void height();
+}
+interface Mother
+{
+	float HT=5.8f;
+	void height();
+}
+class Child implements Father,Mother
+{
+	public void height()
+	{
+		float height=(Father.HT+Mother.HT)/2;
+		System.out.println("Child Height is ="+height);
+	}
+}
+class Test
+{
+	public static void main(String[] args)
+	{
+		Child c=new Child();
+		c.height();
+		
+	}
+}
+
+Note:
+-----
+Interface contains only abstract methods.Hence it is also known as purely abstract class.
+
+
+Java 7
+--------
+Interface is a collection of zero or more abstract methods.
+
+
+Java 8
+---------
+Interface is a collection of abstract methods , default methods and static methods.
+
+
+Java 9
+-------
+Interface is a collection of abstract methods, default methods, static methods and private methods.
+
+
+
+Q)What is Marker interface?
+
+A marker interface is an interface that doesn't have any methods or constants inside it.
+
+In general, empty interface is called marker interface.
+
+Using marker interface we will get some ability to do.
+
+ex:
+	Serializable 
+	Remote
+	Clonable 
+	and etc.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

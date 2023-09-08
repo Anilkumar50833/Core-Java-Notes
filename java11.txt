@@ -1,0 +1,353 @@
+Types of variables
+===================
+A name which is given to a memory location is called a variable.
+
+Purpose of variable is used to store the data.
+
+In java, we have two types of variables.
+
+1)Primitive variables
+
+2)Reference variables 
+
+1)Primitive variables
+-----------------------
+It is used to represent primitive values.
+
+
+2)Reference variable
+-------------------
+It is used to represent object reference.
+ex:
+	Student s=new Student();
+		|
+		reference variable 
+
+
+Based on the position and execution above variables are divided into three types.
+
+1)Instance variable / Non-Static variable 
+
+2)Static variable / Global variable 
+
+3)Local variable / Temperory variable / Automatic variable 
+
+1)Instance variable
+-------------------
+A value of a variable which is varied(changes) from object to object is called instance variable.
+
+Instance variable will be created at the time object creation and it will destroy at the time of object destruction.Hence scope of instance variable is same as scope of an object.
+
+Instance variable will store in heap area as a part of an object.
+
+Instance variable must and should declare inside the class but not inside methods , blocks and constructors.
+
+Instance variable we can access directly from instance area but we can't access 
+directly from static area.
+
+To access instance variable from static area we need to create object reference.
+
+ex:1
+-----
+class Test
+{
+	//instance variable
+	int i=10;
+
+	public static void main(String[] args)
+	{
+		System.out.println(i);//C.T.E 
+	}	
+}
+
+ex:2
+-----
+class Test
+{
+	//instance variable
+	int i=10;
+
+	public static void main(String[] args)
+	{
+		Test t=new Test();
+		System.out.println(t.i);//10
+	}	
+}
+
+ex:3
+-----
+class Test
+{
+	//non-static method
+	public void m1()
+	{
+		System.out.println("instance-method");
+	}
+	
+	public static void main(String[] args)
+	{
+		m1();//C.T.E 
+	}	
+}
+
+ex:4
+----
+class Test
+{
+	//non-static method
+	public void m1()
+	{
+		System.out.println("instance-method");
+	}
+	
+	public static void main(String[] args)
+	{
+		Test t=new Test();
+		t.m1();
+	}	
+}
+
+Note:
+-----
+If we won't initialize any value to instance variable then JVM will initialize default values.
+
+ex:5
+------
+class Test
+{
+	//instance variable
+	boolean b;
+	
+	public static void main(String[] args)
+	{
+		Test t=new Test();
+		System.out.println(t.b);// false	
+	}	
+}
+
+ex:6
+------
+class Test
+{
+	//instance variable
+	int i=10;	
+
+	//non-static method
+	public void m1()
+	{
+		System.out.println(i);//10
+	}
+
+	//static method
+	public static void main(String[] args)
+	{
+		Test t=new Test();
+		System.out.println(t.i);//10	
+
+		t.m1();	
+	}
+	
+}
+
+
+
+2)Static variable 
+-------------------
+A value of a variable which is not varied from object to object is called static variable.
+
+A static variable will be created at the time of classloading and it will destroy at the time of classunloading.Hence scope of static variable is same as scope of a .class file.
+
+A static variable will store in method area.
+
+A static variable must and should declare inside the class using static keyword but not inside methods,blocks and constructors.
+
+A static variable we can access directly from instance area as well as from static area.
+
+A static variable we can access by using object reference and class name also.
+
+ex:1
+-----
+class Test
+{
+	//static variable
+	static int i=10;
+	
+	public static void main(String[] args)
+	{
+		System.out.println(i);//10	
+	}	
+}
+
+ex:2
+----
+class Test
+{
+	//static variable
+	static int i=10;
+	
+	public static void main(String[] args)
+	{
+		System.out.println(i);//10
+
+		Test t=new Test();
+		System.out.println(t.i);//10
+
+		System.out.println(Test.i);//10	
+	}	
+}
+
+ex:3
+-----
+class Test
+{
+	public static void main(String[] args)
+	{
+		m1();
+
+		Test t=new Test();
+		t.m1();
+
+		Test.m1();	
+	}	
+	//static method
+	public static void m1()
+	{
+		System.out.println("static-method");
+	}
+}
+
+Note:
+-----
+If we won't initialized any value to static variable then JVM will initialize default values.
+
+ex:4
+-------
+class Test
+{
+	//static variable
+	static  String s;
+
+	public static void main(String[] args)
+	{
+		System.out.println(s);//null			
+	}	
+	
+}
+
+ex:5
+----
+class Test
+{
+	//static variable
+	static int i=10;	
+
+	//non-static method
+	public void m1()
+	{
+		System.out.println(i);
+	}
+
+	//static method
+	public static void m2()
+	{
+		System.out.println(i);//10
+	}
+
+	//static method
+	public static void main(String[] args)
+	{
+		Test t=new Test();
+		t.m1();
+
+		m2();
+
+	}
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

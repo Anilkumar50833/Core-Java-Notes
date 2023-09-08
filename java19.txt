@@ -1,0 +1,741 @@
+Q)Write a java program to accept six marks of a student then find out total, average and grade?
+
+i) if average is greater then equals to 70 then  A grade.
+
+ii) If average is greater then equals to 50 then B grade.
+
+iii) If average is greater then equals to 35 then C grade.
+
+iv) if average is less then 35 then failed.
+
+
+
+class Test
+{
+	public static void main(String[] args)
+	{
+		int m1=56,m2=44,m3=52,m4=63,m5=71,m6=51;
+
+		int total=m1+m2+m3+m4+m5+m6;
+
+		float average=(float)total/6;
+
+		System.out.println("Total :"+total);
+		System.out.println("Average :"+average);
+		
+		if(average>=70)
+			System.out.println("Grade : A Grade ");
+		else if(average>=50)
+			System.out.println("Grade : B Grade ");
+		else if(average>=35)
+			System.out.println("Grade : C Grade ");
+		else
+			System.out.println("Grade : Failed");
+
+	}
+}
+
+iv)nested if stmt
+---------------------
+If stmt contains another if stmt is called nested if stmt.
+syntax:
+	if(condition/expression)
+	{
+		if(condition/expression)
+		{
+			-
+			- //code to be execute 
+			-
+		}
+	}
+
+ex:1
+-------
+class Test
+{
+	public static void main(String[] args)
+	{
+		System.out.println("stmt1");	
+		if(true)
+		{
+			System.out.println("stmt2");
+			if(5>2)
+			{
+				System.out.println("stmt3");	
+			}
+			System.out.println("stmt4");	
+		}
+		System.out.println("stmt5");	
+	}
+}
+o/p:
+
+stmt1
+stmt2
+stmt3
+stmt4
+stmt5
+
+ex:
+----
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class Test
+{
+	public static void main(String[] args)
+	{
+		System.out.println("stmt1");	
+		if(false)
+		{
+			System.out.println("stmt2");
+			if(5>2)
+			{
+				System.out.println("stmt3");	
+			}
+			System.out.println("stmt4");	
+		}
+		System.out.println("stmt5");	
+	}
+}
+
+o/p:
+stmt1
+stmt5
+
+ex:
+---
+class Test
+{
+	public static void main(String[] args)
+	{
+		System.out.println("stmt1");	
+		if(true)
+		{
+			System.out.println("stmt2");
+			if(5>20)
+			{
+				System.out.println("stmt3");	
+			}
+			System.out.println("stmt4");	
+		}
+		System.out.println("stmt5");	
+	}
+}
+o/p:
+
+stmt1
+stmt2
+stmt4
+stmt5
+
+Q)Write a java program to check given number is +ve or -ve  by using nested if stmt?
+
+ex:
+
+import java.util.Scanner;
+class Test
+{
+	public static void main(String[] args)
+	{
+		Scanner sc=new Scanner(System.in);
+
+		System.out.println("Enter the number :");
+		int n=sc.nextInt();
+
+		if(n!=0)
+		{
+			if(n>0)
+			{
+				System.out.println("It is +ve number");
+				System.exit(0);
+			}
+
+			System.out.println("It is -ve number");
+		}
+	}
+}
+
+2)Selection Statement
+=====================
+
+switch case
+===========
+It will execute the source code based on multiple conditions.
+
+It is similar to if else if ladder.
+
+syntax:
+-----
+	switch(condition/expression)
+	{
+		case val1 :  
+				//code to be execute
+				break stmt ;
+
+		case val2 :  
+				//code to be execute
+				break stmt ;
+
+		-
+		default:
+				//code to be execute if all cases are false.
+	}
+
+Declaration of break statement is optional in switch case. If we won't declare break statement then from where our condition is satisfied from there all cases will be executed , that state is called fall through state of switch case.
+
+ex:
+-----
+import java.util.Scanner;
+class Test
+{
+	public static void main(String[] args)
+	{
+		Scanner sc=new Scanner(System.in);
+
+		System.out.println("Enter the option :");
+		int option=sc.nextInt();
+
+		switch(option)
+		{
+			case 100:  System.out.println("It is police number");
+					   break;
+			case 103:  System.out.println("It is enquiry number");
+					   break;
+			case 108:  System.out.println("It is emergency number");
+					   break;
+			default :  System.out.println("Invalid option");
+		}
+
+	}
+}
+
+ex:
+----
+import java.util.Scanner;
+class Test
+{
+	public static void main(String[] args)
+	{
+		Scanner sc=new Scanner(System.in);
+
+		System.out.println("Enter the option :");
+		int option=sc.nextInt();
+
+		switch(option)
+		{
+			case 100:  System.out.println("It is police number");
+					   //break;
+			case 103:  System.out.println("It is enquiry number");
+					   //break;
+			case 108:  System.out.println("It is emergency number");
+					   //break;
+			default :  System.out.println("Invalid option");
+		}
+
+	}
+}
+
+wwQ)Write a java program to find out given alphabet is a vowel or consonent?
+
+import java.util.Scanner;
+class Test
+{
+	public static void main(String[] args)
+	{
+		Scanner sc=new Scanner(System.in);
+
+		System.out.println("Enter the Alphabet :");
+		char ch=sc.next().charAt(0);
+
+		switch(ch)
+		{
+			case 'a':  System.out.println("It is a vowel"); break;
+			case 'e':  System.out.println("It is a vowel"); break;
+			case 'i':  System.out.println("It is a vowel"); break;
+			case 'o':  System.out.println("It is a vowel"); break;
+			case 'u':  System.out.println("It is a vowel"); break;
+			default :  System.out.println("It is a consonent");
+		}
+
+	}
+}
+
+ex:
+----
+import java.util.Scanner;
+class Test
+{
+	public static void main(String[] args)
+	{
+		Scanner sc=new Scanner(System.in);
+
+		System.out.println("Enter the string :");
+		String str=sc.next();
+
+		switch(str)
+		{
+			case "one":  System.out.println("January"); break;
+			case "two":  System.out.println("February"); break;
+			case "three":  System.out.println("March"); break;
+			case "four":  System.out.println("April"); break;
+			case "five":  System.out.println("May"); break;
+			default :  System.out.println("Coming Soon...");
+		}
+
+	}
+}
+
+
+In How many ways we can write java methods
+==========================================
+We can write java methods in following ways.
+
+1)No returntype with No argument method 
+
+2)No returntype with Argument method
+
+3)With returntype with No argument method
+
+4)With returntype with Argument method 
+
+
+1)No returntype with No argument method 
+--------------------------------------
+If we don't have arguments then we need to ask input values inside callie method.
+
+Q)Write a java program to perform sum of two numbers using first method?
+
+import java.util.Scanner;
+class Test
+{
+	public static void main(String[] args)
+	{
+		 //caller 
+		 sum();
+	}
+	//static method
+	//callie method 
+	public static void sum()
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the First Number :");
+		int a=sc.nextInt();
+		System.out.println("Enter the Second Number :");
+		int b=sc.nextInt();
+
+		//logic
+		int c=a+b;
+		System.out.println("sum of two numbers is ="+c);
+	}
+}
+
+Q)Write a java program to check given is even or odd using first method?
+
+import java.util.Scanner;
+class Test
+{
+	public static void main(String[] args)
+	{
+		 //caller
+		find();
+	}
+	//static method
+	//callie method
+	public static void find()
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the number :");
+		int n=sc.nextInt();
+		if(n%2==0)
+			System.out.println("It is even number");
+		else
+			System.out.println("It is odd number");
+	}
+}
+
+
+2)No returntype with Argument method
+-------------------------------------
+If we have arguments then we need to ask input values inside main method.
+
+Number of arguments is depends upon number of inputs.
+
+Q)Write a java program to perform sum of two numbers using second method?
+
+import java.util.Scanner;
+class Test
+{
+	public static void main(String[] args)
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the First Number :");
+		int a=sc.nextInt();
+		System.out.println("Enter the Second Number :");
+		int b=sc.nextInt();
+
+		//caller 
+		sum(a,b);
+	}
+	//static method
+	//callie method
+	public static void sum(int a,int b)
+	{
+		int c=a+b;
+		System.out.println("sum of two numbers is ="+c);
+	}
+}
+
+
+Q)Write a java program to check given number is even or odd using second method?
+
+import java.util.Scanner;
+class Test
+{
+	public static void main(String[] args)
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the number :");
+		int n=sc.nextInt();
+
+		//caller 
+		find(n);
+	}
+	//static method
+	//callie method
+	public static  void find(int n)
+	{
+		if(n%2==0)
+			System.out.println("It is even number");
+		else
+			System.out.println("It is odd number");
+	}	
+}
+
+
+3)With returntype with No argument method
+--------------------------------------------
+Returntype is completely depends upon output datatype.
+
+Q)Write a java program to perform sum of two numbers using third method?
+
+import java.util.Scanner;
+class Test
+{
+	public static void main(String[] args)
+	{
+		//caller 
+		int k=sum();
+		System.out.println("Sum of two numbers is ="+k);
+	}
+	//static method
+	//callie method
+	public static int sum()
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the first Number :");
+		int a =sc.nextInt();
+		System.out.println("Enter the second number :");
+		int b=sc.nextInt();
+
+		int c=a+b;
+
+		return c;
+	}
+}
+
+Q)Write a java program to check given number is even or odd using third method?
+
+import java.util.Scanner;
+class Test
+{
+	public static void main(String[] args)
+	{
+		//caller 
+		String s=find();
+		System.out.println(s);
+	}
+	//static method
+	//callie method
+	public static String find()
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the number :");
+		int n=sc.nextInt();
+		if(n%2==0)
+			return "It is even number";
+		else
+			return "It is odd number";
+	}
+}
+
+
+3)With returntype with argument method
+--------------------------------------------
+
+Q)Write a java program to perform sum of two numbers using fourth method?
+
+import java.util.Scanner;
+class Test
+{
+	public static void main(String[] args)
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the first number :");
+		int a=sc.nextInt();
+		System.out.println("Enter the second number :");
+		int b=sc.nextInt();
+
+		//caller
+		System.out.println("sum of two numbers is ="+sum(a,b));
+	}
+	//static method
+	//callie method
+	public static int sum(int a,int b)
+	{
+		int c=a+b;
+		return c;
+	}
+}
+
+Q)Write a java program to check given number is even or odd using fourth method?
+
+import java.util.Scanner;
+class Test
+{
+	public static void main(String[] args)
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the number :");
+		int n=sc.nextInt();
+
+		//caller
+		System.out.println(find(n));
+	}
+	//static method
+	//callie method
+	public static String find(int n)
+	{
+		if(n%2==0)
+			return "It is even number";
+		else
+			return "It is odd number";
+	}
+}
+
+Assignment
+==========
+Q)Write a java program to find out square of a given number?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

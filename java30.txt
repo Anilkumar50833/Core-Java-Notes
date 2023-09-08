@@ -1,0 +1,496 @@
+Abstract class
+===============
+Abstract class is a collection of zero or more abstract methods and zero or more concrete methods.
+
+A "abstract" keyword is applicable for methods and classes but not for variables.
+
+It is not possible to created object for abstract class.
+
+To write the implementation of abstract methods of an abstract class we will use sub classes.
+
+By default every abstract method is a public and abstract.
+
+Abstract class contains only instance variables.
+
+syntax:
+------
+	abstract  class  Class_Name
+	{
+		-
+		- // instance variables 
+		- // abstract methods  
+		- // concrete methods 
+		-
+	}
+
+ex:
+-----
+abstract class Plan
+{
+	//instance variable 
+	protected double rate;
+
+	//abstract method 
+	public abstract void getRate();
+
+	//concrete method 
+	public void calculateBillAmt(int units)
+	{
+		System.out.println("Total Units :"+units);
+		System.out.println("Total Bill :"+ units*rate);
+	}
+}
+class DomesticPlan extends Plan
+{
+	public void getRate()
+	{
+		rate=2.5d;	
+	}
+}
+class CommercialPlan extends Plan
+{
+	public void getRate()
+	{
+		rate=5.0d;
+	}
+}
+class Test
+{
+	public static void main(String[] args)
+	{
+		DomesticPlan dp=new DomesticPlan();
+		dp.getRate();
+		dp.calculateBillAmt(250);
+
+		CommercialPlan cp=new CommercialPlan();
+		cp.getRate();
+		cp.calculateBillAmt(250);
+	}
+}
+
+Q)Difference between Interface and Abstract class?
+
+Interface				Abstract class
+-------------				-----------------
+To declare interface we will use 	To declare abstract class we will use 	
+interface keyword.			abstract keyword.
+
+It is a collection of abstract methods,	It is a collection of abstract methods and 
+default methods and static methods.	concrete methods.
+
+We can achieve multiple inheritance.	We can can't achieve multiple inheritance.
+
+It contains constants.			It contains instance variables.
+
+Constructors are not allowed.		Constructors are allowed.	
+
+Blocks are not allowed.			Blocks are allowed.
+
+To write the implementation of 		To write the implementation of abstract 
+abstract methods of an interface 	methods of an abstract class we will use 
+we will use implementation class.	sub classes.
+
+If we know only specification then	If we know partial implementation then 
+we need to use interface.		we need to use abstract class.
+
+
+
+API
+====
+API stands for Application Programming Interface.
+
+API is a collection of packages.
+
+It is a base for the programmers to develop software applications.
+
+We have three types of API's.
+
+1)Predefined API
+---------------
+Built-In API is called predefined API.
+ex:
+	https://docs.oracle.com/javase/8/docs/api/
+
+2)Userdefined API 
+---------------------
+API which is created by the user based on the application requirements is called userdefined API.
+
+
+3)Third party API 
+------------------
+API which is given by third party vendor is called third party api.
+ex:
+	JAVAZOOM API 
+	iText API 
+	and etc.
+
+
+Packages 
+=========
+A package is a collection of classes,interfaces,enums and Annotations.
+
+Here enum is a special class and anotation is a special interface.
+
+In general, A package is a collection of classes and interfaces.
+
+A package is also known as folder or a directory.
+
+In java , packages are divided into two types.
+
+1)Predefined packages 
+----------------------
+Built-In packages are called predefined packages.
+ex:
+	java.lang
+	java.io
+	java.util
+	java.text
+	java.time
+	java.util.stream
+	java.sql
+	javax.servlet
+	javax.jsp 
+	and etc.
+
+2)Userdefined packages 
+----------------------
+Packages which are created by the user based on the application requirement are called userdefined packages.
+
+syntax:
+	package  package_name;
+
+ex:
+----
+package  com.ihub.www;
+class  Test
+{
+	public static void main(String[] args)
+	{
+		Calendar c=Calendar.getInstance();
+		int h=c.get(Calendar.HOUR_OF_DAY);
+		
+		if(h<12)
+			System.out.println("Good Morning");
+		else if(h<16)
+			System.out.println("Good Afternoon");
+		else if(h<20)
+			System.out.println("Good Evening");
+		else
+			System.out.println("Good Night");
+	}
+}
+
+We can compile above code by using below command.
+ex:
+	destination folder 
+		 |		
+	javac   -d   .   Test.java
+		     |
+		current directory 	
+
+
+We can run above code by using below command.
+ex:
+	java     com.ihub.www.Test 
+			|       |
+		package name   class name 
+
+
+
+
+Q)What is singleton class?
+
+A class which allows us to created only one object is called singleton class.
+
+Wrapper classes
+=================
+The main objective of wrapper classes are
+
+1) To wrap primitive type to wrapper object and vice versa.
+
+2) To defined several utility methods.
+
+Primitive type				wrapper class
+----------------			---------------
+byte					Byte
+short					Short
+int					Integer
+long					Long
+float					Float
+double					Double
+boolean					Boolean
+char 					Character 
+
+constructor
+------------
+Every wrapper class contains two constructors.
+
+One will take corresponding primitive as an argument and another will take corresponding String as an argument.
+
+ex:
+
+wrapper class				constructor
+-------------				------------
+Byte					byte or String
+Short					short or String
+Integer					int or String
+Long					long or String
+Float					float or String
+Double					double or String
+Boolean					boolean or String 
+Character 				char 
+
+ex:1
+-----
+class Test
+{
+	public static void main(String[] args)
+	{
+		Integer i1=new Integer(10);
+		Integer i2=new Integer("20");
+
+		System.out.println(i1+" "+i2);//10 20
+	}
+}
+
+ex:2
+----
+class Test
+{
+	public static void main(String[] args)
+	{
+		Boolean b1=new Boolean(true);
+		Boolean b2=new Boolean("false");
+
+		System.out.println(b1+" "+b2);//true false
+	}
+}
+
+ex:3
+-----
+class Test
+{
+	public static void main(String[] args)
+	{
+		Character c=new Character('a');
+
+		System.out.println(c);//a
+	}
+}
+
+Utility methods
+===============
+
+i) valueOf()
+-------------
+It is used to convert primitive type to wrapper object.
+
+It is same like constructor.
+
+ex:
+	class Test
+	{
+		public static void main(String[] args)
+		{
+			Integer i1=Integer.valueOf(10);
+
+			System.out.println(i1);//10
+		}
+	}
+
+	
+
+ii) xxxValue()
+-------------
+It is used to convert wrapper object to primitive type.
+ex:
+	class Test
+	{
+		public static void main(String[] args)
+		{
+			Integer i=new Integer(10);
+
+			byte b=i.byteValue();
+
+			short s=i.shortValue();
+	
+			System.out.println(b+" "+s);//10  10
+		}
+	}
+
+
+iii) parseXxx()
+---------------
+It is used to convert String type to primitive type.
+ex:
+	class Test
+	{
+		public static void main(String[] args)
+		{
+			String str="25";
+
+			int i=Integer.parseInt(str);
+	
+			float f=Float.parseFloat(str);
+
+			System.out.println(i+" "+f);//25 25.0
+		}
+	}
+
+
+iv) toString() 
+--------------
+It is used to convert wrapper type to string type.
+
+ex:
+	class Test
+	{
+		public static void main(String[] args)
+		{
+			Integer i=new Integer(10);
+
+			String s=i.toString();
+
+			System.out.println(s);//10
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

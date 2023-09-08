@@ -1,0 +1,160 @@
+Q)Difference between float and double datatype?
+
+float					double
+-----------				----------
+If we need 4 to 6 decimal point of 	If we need 14 to 16 decimal point of 
+accurracy then we need to use float.	accurracy then we need to use double.
+
+Size : 4 bytes (32 bits)		Size : 8 bytes (64 bits)
+
+Range : -3.4e38 to 3.4e38		Range : -1.7e308 to 1.7e308
+
+To declare a float value we need to 	To declare a double value we need to 
+suffix with 'f'.			suffix with 'd'.
+ex:					ex:
+	10.56f;					10.56d;
+
+ex:
+	1)  float f=10.5f;
+            System.out.println(f); // 10.5
+
+	2)  float f=10;
+            System.out.println(f); // 10.0
+
+	3)  float f='a';
+            System.out.println(f); // 97.0
+
+	4)  float f="hi";
+            System.out.println(f); //C.T.E 
+
+	5)  float f=true;
+            System.out.println(f); //C.T.E 
+
+ex:
+	1)  double d=10.5d;
+            System.out.println(d); // 10.5
+
+	2)  double d=10;
+            System.out.println(d); // 10.0
+
+	3)  double d='a';
+            System.out.println(d); // 97.0
+
+	4)  double d="hi";
+            System.out.println(d); //C.T.E 
+
+	5)  double d=true;
+            System.out.println(d); //C.T.E 
+
+boolean 
+---------
+It is used to represent boolean values either true or false.
+
+Size : (Not Applicable)
+Range : (Not Applicable)
+
+ex:
+	1) boolean b="true";
+           System.out.println(b); // C.T.E 
+
+	2) boolean b=FALSE;
+           System.out.println(b); // C.T.E cannot find symbol  
+
+	3) boolean b=true;
+           System.out.println(b); // true 
+
+
+char 
+------
+It is a single character which is enclosed in a single quotation.
+
+size : 2 bytes (16 bits)
+
+Range : 0 to 65535 
+
+ex:
+	1) char ch='a';	
+	   System.out.println(ch); // a 
+
+	2) char ch=65;
+	   System.out.println(ch); // A
+
+	3) char ch="a";
+	   System.out.println(ch); // C.T.E 
+
+
+Diagram: java10.1
+
+
+Interview Question
+-----------------
+
+Q) What is Literal ? 
+
+A value which is not change during the program execution is called literal.
+
+In general , a value which is assigned to a variable is called literal.
+
+ex:
+	int  i = 10;
+	 |   |	 |___ value of a variable / Literal 
+         |   |_______ variable name / identifier 
+	 |___________ datatype / keyword  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

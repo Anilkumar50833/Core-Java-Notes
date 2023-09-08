@@ -1,0 +1,705 @@
+Two Dimensional Array
+=======================
+Two dimensional array is a combination of rows and columns.
+
+syntax:
+	datatype[][]  arr=new int[rows][cols];
+
+ex:
+	int[][] arr=new int[3][3];
+
+	Here we can store 9 elements.
+
+The main objective of two dimensional array is memory utilization.
+
+Two dimensional array is created based on array or arrays approach but not matrix form.
+
+Two dimensional array is used to develop matrix type of applications, gaming applications , business oriented applications and etc.
+
+Q)Write a java program to display array elements in matrix form?
+
+ex:
+
+import java.util.Scanner;
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		
+		System.out.println("Enter the rows :");
+		int rows=sc.nextInt();
+
+		System.out.println("Enter the columns :");
+		int cols=sc.nextInt();
+
+		int[][] arr=new int[rows][cols]; // 
+
+		//insert the elements
+		//rows
+		for(int i=0;i<rows;i++)
+		{
+			//cols
+			for(int j=0;j<cols;j++)
+			{
+				System.out.println("Enter the element :");
+				arr[i][j]=sc.nextInt();
+			}
+		}
+
+		//reading the elements
+		//rows
+		for(int i=0;i<rows;i++)
+		{
+			//cols
+			for(int j=0;j<cols;j++)  
+			{
+				System.out.print(arr[i][j]+" ");
+			}
+			//new line
+			System.out.println("");
+		}
+
+
+	}
+}
+
+Q)Write a java program to perform sum of diagonal elements?
+
+
+
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		
+		int[][] arr={{1,2,3},
+					 {4,5,6},
+					 {7,8,9}
+					};
+		
+		//logic
+		int sum=0;
+		for(int i=0;i<3;i++)
+		{
+			for(int j=0;j<3;j++)  
+			{
+				if(i==j)
+				{
+					sum=sum+arr[i][j];
+				}
+			}
+		}
+		System.out.println("sum of diagonal elements is ="+sum);
+
+	}
+}
+
+
+Q)Write a java program to perform sum of upper triangle elements?
+
+
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		
+		int[][] arr={{1,2,3},
+					 {4,5,6},
+					 {7,8,9}
+					};
+		
+		//logic
+		int sum=0;
+		for(int i=0;i<3;i++)
+		{
+			for(int j=0;j<3;j++)  
+			{
+				if(i<j)
+				{
+					sum=sum+arr[i][j];
+				}
+			}
+		}
+		System.out.println("sum of upper triangle elements is ="+sum);
+
+	}
+}
+
+
+
+Q)Write a java program to perform sum of lower triangle elements?
+
+
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		
+		int[][] arr={{1,2,3},
+					 {4,5,6},
+					 {7,8,9}
+					};
+		
+		//logic
+		int sum=0;
+		for(int i=0;i<3;i++)
+		{
+			for(int j=0;j<3;j++)  
+			{
+				if(i>j)
+				{
+					sum=sum+arr[i][j];
+				}
+			}
+		}
+		System.out.println("sum of lower triangle elements is ="+sum);
+
+	}
+}
+
+
+Q)Write a java program to perform sum of right side diagonal elements?
+
+ex:
+
+
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		
+		int[][] arr={{1,2,3},
+					 {4,5,6},
+					 {7,8,9}
+					};
+		
+		//logic
+		int sum=0;
+		for(int i=0;i<3;i++)
+		{
+			for(int j=0;j<3;j++)  
+			{
+				if(i+j==2)
+				{
+					sum=sum+arr[i][j];
+				}
+			}
+		}
+		System.out.println("sum of right side diagonal elements is ="+sum);
+
+	}
+}
+
+Multi-Dimensional Array
+=========================
+If array contains more then two dimensions is called multi-dimensional array.
+
+The main objective of multi-dimensional array is memory utilization.
+
+ex:
+	int[][][]  arr=new int[3][3][3];
+
+	Here we can store 27 elements.
+
+ex:
+--
+	
+import java.util.Scanner;
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		
+		int[][][] arr=new int[3][3][3];
+
+
+		//inserting elements
+		for(int i=0;i<3;i++)
+		{
+			for(int j=0;j<3;j++)
+			{
+				for(int k=0;k<3;k++)
+				{
+					System.out.println("Enter the element :");
+					arr[i][j][k]=sc.nextInt();
+				}
+			}
+		}
+
+		//reading elements
+		for(int i=0;i<3;i++)
+		{
+			for(int j=0;j<3;j++)
+			{
+				for(int k=0;k<3;k++)
+				{
+					System.out.print(arr[i][j][k]+" ");
+				}
+			}
+			//new line
+			System.out.println("");
+		}
+
+	}
+}
+
+
+Q)What is Anonymous Array?
+
+Sometimes we will declare an array without name such type of namesless array is called anonymous array.
+
+The main objective of anonymous array is just for instance use.
+
+We can declare anonymous array as follow.
+
+ex:
+	new int[]{10,20,30};
+	new int[][]{{10,20,30},{40,50,60}};	
+
+ex:
+----
+
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		//caller
+		System.out.println(sum(new int[]{10,20,30}));
+	}
+
+	//static method
+	public static int sum(int[] arr)
+	{
+		int total=0;
+		//for each loop
+		for(int i:arr)
+		{
+			total+=i;
+		}
+
+		return total;
+	}
+}
+
+
+Q)Write a java program to display most repeating element from given array?
+
+input:
+	1 2 5 5 7 5 8 1 4 3 5
+
+output:
+	5 repeating for 4 times 
+
+ex:
+---
+
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		int[] arr={1,2,5,5,7,5,8,1,4,3,5};	
+		
+		int maxCount=0;
+		int element=arr[0];
+
+		for(int i=0;i<arr.length;i++)
+		{
+			int cnt=0;
+
+			for(int j=0;j<arr.length;j++)
+			{
+				if(arr[i]==arr[j])
+				{
+					cnt++;
+				}
+			}
+			if(maxCount<cnt)
+			{
+				maxCount=cnt;
+				element=arr[i];
+			}
+		}
+		System.out.println(element+" repeating for "+maxCount+" times");
+	}
+}
+
+
+OOPS
+======
+OOPS stands for Object Oriented Programming System/Structure.
+
+
+object oriented technology
+--------------------------
+A technology which provides very good environment to represent our data in the 
+form of objects is called object oriented technology.
+
+A technology is said to be object oriented if it is support following features.
+
+ex:
+	class 
+	object 
+	Abstraction
+	Encapsulation
+	Inheritance and 
+	Polymorphism. 
+
+	
+class
+=====
+A class is a collection of data members and behaviours.
+
+Here data member means variables, fields and properties.
+
+Here behaviour means methods, actions and characteristics.
+
+In general, a class is a collection of variables and methods.
+
+A class is a blue print of an object.
+
+A class is also known as reusable component.
+
+We can declare a class as follow.
+
+syntax:
+	optional 
+	|
+	modifier  class   class_name <extends>  Parent_classname
+				     <implements>  Interface_name 
+	{
+		-
+		- // variables and methods 
+		-
+	}
+
+A class will accept following modifiers.
+ex:
+	default
+	public
+	final
+	abstract 
+
+
+
+Q) What is the difference between default class and public class?
+
+default class
+--------------
+If we declare any class as default then we can access that class within the package.
+
+ex:
+
+	class A
+	{
+		-
+		-
+		-
+	}
+
+public class
+---------
+If we declare any class as public then we can access that class within the package 
+and outside of the package.
+ex:
+	
+	public class A
+	{
+		-
+		-
+		-
+	}
+
+
+Q)What is final class?
+
+If we declare any class as final then creating child class is not possible.
+ex:
+	final class A 
+	{
+	}
+	class B extends A   X -- invalid 
+	{
+	}
+
+
+Q)What is abstract class?
+
+If we declare any class as abstract then creating object of that class is not possible.
+ex:
+	abstract class A
+	{
+		
+	}
+
+	A a=new A();  X --- invalid 
+
+object
+=======
+It is an instance of a class.
+
+Here instance means allocating memory for our data members.
+
+Object is a outcome of a blue print.
+
+Memory space will be create when we create an object.
+
+We can declare an object as follow.
+
+syntax:
+
+	Class_Name  reference_variable=new  Constructor();
+ex:
+	Test t=new Test();
+
+It is possible to create more then one object in a single class.
+
+ex:
+----
+public class Test 
+{
+	public static void main(String[] args) 
+	{
+		Test t1=new Test();
+		Test t2=new Test();
+		Test t3=new Test();
+
+		System.out.println(t1.hashCode());
+		System.out.println(t2.hashCode());
+		System.out.println(t3.hashCode());
+
+		System.out.println(t1); // Test@Hexadecimalno  
+		System.out.println(t2.toString());
+		System.out.println(t3.toString());
+	}
+}
+
+hashCode() 
+------------
+It is a method present in Object class.
+
+For every object jvm will create a unique identification number i.e hash code.
+In order to read hash code of an object we need to use hashCode() method.
+
+Diagram: java26.1
+
+toString()
+-----------
+It is a method present in Object class.
+
+Whenever we are trying to display object reference directly or indirectly toString() method will be executed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

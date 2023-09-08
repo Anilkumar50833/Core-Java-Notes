@@ -1,0 +1,724 @@
+3)Iteration statement
+=====================
+Iteration statement is used to execute the code repeatedly.
+
+Iteration statement is possible by using LOOPS.
+
+We have four types of LOOPS.
+
+i) do while loop
+
+ii) while loop
+
+iii) for loop
+
+iv) for each loop 
+
+
+i) do while loop
+-------------------
+It will execute the source code untill our condition is true.
+
+syntax:
+-------
+	do
+	{
+		-
+		- //code to be execute
+		-
+	}while(condition);
+
+ex:1
+-----
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		int i=1;
+		do
+		{
+			System.out.print(i+" ");
+		}
+		while (i<=10);
+	}
+}
+o/p:
+	infinite 1.
+
+
+Do while loop, will execute atleast for one time either our condition is true or false.
+
+ex:2
+----
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		int i=11;
+		do
+		{
+			System.out.print(i+" ");
+		}
+		while (i<=10);
+	}
+}
+o/p:
+	11
+
+
+Q)Write a java program to display 10 natural numbers?
+
+natural numbers : 1 2 3 4 5 6 7 8 9 10
+
+
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		int i=1;
+		do
+		{
+			System.out.print(i+" ");//1 2 3 4 5 6 7 8 9 10
+
+			i++;
+		}
+		while (i<=10);
+	}
+}
+
+Q)Write a java program to display 10 natural numbers in descending order?
+
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		int i=10;
+		do
+		{
+			System.out.print(i+" ");//10 9 8 7 6 5 4 3 2 1
+
+			i--;
+		}
+		while (i>=1);
+	}
+}
+
+Q)Write a java program to perform sum of 10 natural numbers?
+
+natural numbers : 1+2+3+4+5+6+7+8+9+10 = 55
+
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		int i=1,sum=0;
+		do
+		{
+			sum=sum+i;
+			i++;
+		}
+		while (i<=10);
+		System.out.println("sum of 10 natural numbers is ="+sum);
+	}
+}
+
+Q)Write a java program to find out factorial of a given number?
+
+input:
+	5
+
+output:
+	120 (5*4*3*2*1)
+
+import java.util.Scanner;
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+
+		System.out.println("Enter the number :");
+		int n=sc.nextInt();
+
+		int i=n,fact=1;
+
+		do
+		{
+			fact=fact*i;
+			i--;
+		}
+		while (i>=1);
+		System.out.println("Factorial of a given number is ="+fact);
+		
+	}
+}
+
+Q)Write a java program to perform multiplication table of a given number?
+
+import java.util.Scanner;
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+
+		System.out.println("Enter the number :");
+		int n=sc.nextInt();//5
+
+	
+		int i=1;
+		do
+		{
+			System.out.println(n+" * "+i+" = "+n*i);
+			i++;
+		}
+		while (i<=10);
+		
+	}
+}
+
+ii) while loop
+--------------------
+It will execute the source code untill our condition is true.
+
+syntax:
+----
+	while(condition)
+	{
+		-
+		- //code to be execute 
+		-
+	}
+
+ex:1
+-----
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		int i=1;
+
+		while(i<=10)
+		{
+			System.out.print(i+" ");
+		}
+	}
+}
+o/p:
+	infinite 1
+
+
+ex:2
+------
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		int i=11;
+
+		while(i<=10)
+		{
+			System.out.print(i+" ");// no output
+		}
+	}
+}
+
+Q)Write a java program sum of 10 natural numbers?
+
+ex:
+
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		int i=1,sum=0;
+
+		while(i<=10)
+		{
+			sum+=i;
+			i++;
+		}
+
+		System.out.println("sum of 10 natural numbers is ="+sum);
+	}
+}
+
+Q)Write a java program to perform factorial of a given number ?
+
+import java.util.Scanner;
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		
+		System.out.println("Enter the number :");
+		int n=sc.nextInt();
+
+		int i=n,fact=1;
+
+		while(i>=1)
+		{
+			fact*=i;
+			i--;
+		}
+		System.out.println("Factorial of a given number is ="+fact);
+	}
+}
+
+Q)Write a java program to perform multiplication table of a given number?
+
+import java.util.Scanner;
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		
+		System.out.println("Enter the number :");
+		int n=sc.nextInt();
+
+		int i=1;
+		while(i<=10)
+		{
+			System.out.println(n+" * "+i+" = "+n*i);
+
+			i++;
+		}
+	}
+}
+
+Q)Write a java program to perform sum of digits of a given number?
+
+input:
+	123
+
+output:
+	6 (1+2+3)
+
+ex:
+
+import java.util.Scanner;
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		
+		System.out.println("Enter the number :");
+		int n=sc.nextInt();
+
+		int rem,sum=0;
+
+		while(n>0)
+		{
+			rem=n%10;
+			sum=sum+rem;
+			n=n/10;
+		}
+
+		System.out.println("sum of digits of a given number is ="+sum);
+	}
+}
+
+
+Q)Write a java program to find out reverse of a given number ?
+
+input:
+	123
+
+output:
+	321
+
+import java.util.Scanner;
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		
+		System.out.println("Enter the number :");
+		int n=sc.nextInt();
+
+		int rem,rev=0;
+
+		while(n>0)
+		{
+			rem=n%10;
+			rev=rev*10+rem;
+			n=n/10;
+		}
+
+		System.out.println("Reverse of a given number is ="+rev);
+	}
+}
+
+Q)Write a java program to find out given number is palindrome or not?
+
+input:
+	121
+
+output:
+	It is a palindrome number 
+
+
+import java.util.Scanner;
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		
+		System.out.println("Enter the number :");
+		int n=sc.nextInt();//121
+
+		int temp=n;
+
+		int rem,rev=0;
+
+		while(n>0)
+		{
+			rem=n%10;
+			rev=rev*10+rem;
+			n=n/10;
+		}
+		if(temp==rev)
+			System.out.println("It is a palindrome number");
+		else
+			System.out.println("It is not a palindrome number");
+		
+	}
+}
+
+Q)Write a java program to display given number is armstrong or not?
+
+input:
+	153
+
+output:
+	It is a Armstrong number(1*1*1+5*5*5+3*3*3)(1+125+27)(153)
+
+
+import java.util.Scanner;
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		
+		System.out.println("Enter the number :");
+		int n=sc.nextInt();//153
+
+		int temp=n;
+
+		int rem,sum=0;
+
+		while(n>0)
+		{
+			rem=n%10;
+			sum=sum+rem*rem*rem; // cube value
+			n=n/10;
+		}
+		if(temp==sum)
+			System.out.println("It is a Armstrong number");
+		else
+			System.out.println("It is not a Armstrong number");
+		
+	}
+}
+
+Q)Write a java program to display reverse of a given number in words?
+
+input:
+	123
+output:
+	ThreeTwoOne
+
+import java.util.Scanner;
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		
+		System.out.println("Enter the number :");
+		int n=sc.nextInt();//123
+
+		int rem;
+		while(n>0)
+		{
+			rem=n%10;
+			switch(rem)
+			{
+				case 0: System.out.print("Zero");break;
+				case 1: System.out.print("One");break;
+				case 2: System.out.print("Two");break;
+				case 3: System.out.print("Three");break;
+				case 4: System.out.print("Four");break;
+				case 5: System.out.print("Five");break;
+				case 6: System.out.print("Six");break;
+				case 7: System.out.print("Seven");break;
+				case 8: System.out.print("Eight");break;
+				case 9: System.out.print("Nine");break;
+			}
+			n=n/10;
+		}
+
+		
+		
+	}
+}
+
+Assignment
+=============
+1)Write a java program to perform sum of 10 natural number?
+
+2)Write a java program to find out factorial of a given number?
+
+3)Write a java program to find out sum of digits of a given number?
+
+4)Write a java program to find out reverse of a given number?
+
+5)Write a java program to find out given number is palindrome or not?
+
+6)Write a java program to find out given number is armstrong or not?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,201 @@
+Datatypes
+=============
+Datatype describes what type of value a variable should accept.
+
+Datatype also tells how much memory has to be created for a variable.
+
+We have two types of datatypes.
+
+Diagram: java9.1
+
+byte
+------
+It is a small datatype in java.
+
+size : 1 byte (8 bits)
+
+Range : -128 to 127 (-2^7 to 2^7-1)
+
+ex:
+	1) byte b=10;
+	   System.out.println(b); // 10
+
+	2) byte b=130;
+           System.out.println(b); // C.T.E  
+	
+	3) byte b=10.5;
+	   System.out.println(b); // C.T.E 
+
+short
+--------
+It is a rarely used datatype in java.
+
+Size : 2 byte (16 bits)
+
+Range : -32768 to 32767 (-2^15 to 2^15-1)
+
+ex:
+	1) byte b=10;
+           short s=b;
+           System.out.println(s); // 10
+
+	2) short s=10.5;
+           System.out.println(s); // C.T.E 
+
+	3) short s="hello";
+           System.out.println(s); // C.T.E 
+
+int
+----
+It is a mostly used datatype in java.
+
+Size: 4 bytes (32 bits)
+
+Range : -2147483648 to 2147483647 (-2^31 to 2^31-1)
+
+ex:
+	1) int i="true";
+           System.out.println(i); // C.T.E 
+
+	2) int i=false;
+           System.out.println(i); // C.T.E  
+
+	3) int i='a';
+           System.out.println(i); // 97
+
+	4) int i='A';
+           System.out.println(i); // 65
+
+Note:
+------
+	In java, for every character we have universal unicode value.
+	ex:
+		a = 97 
+		A = 65
+
+long
+------
+If int datatype is not enough to hold large value then we need to use long datatype.
+
+Size : 8 bytes (64 bits)
+
+Range : (-2^63 to 2^63-1)
+
+ex:
+	1) long l=true;
+           System.out.println(l) //C.T.E 
+
+	2) long l="hi";
+           System.out.println(l); //C.T.E 
+
+	3) long l=10.5;
+           System.out.println(l); //C.T.E 
+
+	4) long l='d';
+           System.out.println(l); // 100
+
+
+Q)Write a java program to display range of byte datatype?
+
+Range : -128 to 127
+
+class Test
+{
+	public static void main(String[] args)
+	{
+		System.out.println(Byte.MAX_VALUE);
+		System.out.println(Byte.MIN_VALUE);
+	}
+}
+
+
+Q)Write a java program to find out range of short datatype?
+
+short : -32768 to 32767 
+
+class Test
+{
+	public static void main(String[] args)
+	{
+		System.out.println(Short.MIN_VALUE);
+		System.out.println(Short.MAX_VALUE);
+	}
+}
+
+Q)Write a java program to find out range of int datatype?
+
+int : -2147483648 to 2147483647
+
+ex:
+
+class Test
+{
+	public static void main(String[] args)
+	{
+		System.out.println(Integer.MIN_VALUE);
+		System.out.println(Integer.MAX_VALUE);
+	}
+}
+
+Q)Write a java program to find out range of long datatype?
+
+ex:
+class Test
+{
+	public static void main(String[] args)
+	{
+		System.out.println(Long.MIN_VALUE);
+		System.out.println(Long.MAX_VALUE);
+	}
+}
+o/p:
+
+-9223372036854775808
+9223372036854775807
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
